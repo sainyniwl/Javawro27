@@ -2,6 +2,7 @@ package pl.sda.rafal.zientara;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -49,5 +50,104 @@ TicTacToe game;
         game.printBoard();
         //then
         assertEquals(FieldStatus.O, status);
+
     }
+
+    @Test
+    public void actionShouldThrowIfFieldIsTaken() {
+        //given
+        game.action(0, 0);
+
+        //when
+        assertThrows(IllegalStateException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                game.action(0, 0);
+            }
+        });
+
+    }
+
+    @Test
+    public void playerXCanWinHorizontally(){
+        //wstawienie na zmianę O i X
+        game.action(0,0);
+        game.action(0,1);
+        game.action(1,0);
+        game.action(1,1);
+        game.action(2,0);
+        game.printBoard();
+
+        //when
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+    }
+
+    @Test
+    public void playerXCanWinVertically(){
+        //wstawienie na zmianę O i X
+        game.action(1,0);
+        game.action(0,1);
+        game.action(1,1);
+        game.action(2,1);
+        game.action(1,2);
+        game.printBoard();
+
+        //when
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+    }
+
+    @Test
+    public void playerXCanWinDiagonallyFromLeft(){
+        game.action(0,0);
+        game.action(0,1);
+        game.action(1,1);
+        game.action(1,2);
+        game.action(2,2);
+        game.printBoard();
+
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+
+    }
+
+    @Test
+    public void playerXCanWinDiagonallyFromRight(){
+        game.action(2,0);
+        game.action(1,0);
+        game.action(1,1);
+        game.action(2,1);
+        game.action(0,2);
+        game.printBoard();
+
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+
+    }
+
+    @Test
+    public void draw(){
+        game.action(1,1);//x1
+        game.action(2,1);//o2
+        game.action(2,0);//x3
+        game.action(0,2);//o4
+        game.action(1,2);//x5
+        game.action(1,0);//o6
+        game.action(2,2);//x7
+        game.action(0,0);//o8
+        game.action(0,1);//x9
+        game.printBoard();
+
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.DRAW, result);
+
+    }
+
+
 }
