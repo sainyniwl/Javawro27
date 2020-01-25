@@ -100,5 +100,77 @@ class TicTacToeTest {
         assertEquals(GameResult.PLAYER_X_WIN, result);
     }
 
+    @Test
+    public void isDiagonalWinFromLeft(){
+        game.action(0,0);
+        game.action(1,0);
+        game.action(1,1);
+        game.action(2,1);
+        game.action(2,2);
+        game.printBoard();
+
+
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+
+    }
+
+    @Test
+    public void isDiagonalWinFromRight(){
+        game.action(2,0);
+        game.action(0,1);
+        game.action(1,1);
+        game.action(2,1);
+        game.action(0,2);
+        game.printBoard();
+
+
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+
+    }
+
+    @Test
+    public void trololo(){
+        game.action(0,0);
+        game.action(1,0);
+        game.action(0,1);
+        game.action(1,1);
+        game.action(0,2);
+        game.printBoard();
+
+
+        GameResult result = game.checkResult();
+
+        assertThrows(IllegalStateException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                game.action(1,2);
+            }
+        });
+
+    }
+
+    @Test
+    public void isDraw(){
+        game.action(0,1);
+        game.action(0,0);
+        game.action(0,2);
+        game.action(1,1);
+        game.action(1,0);
+        game.action(1,2);
+        game.action(2,1);
+        game.action(2,0);
+        game.action(2,2);
+        game.printBoard();
+
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.DRAW, result);
+
+    }
+
 
 }
