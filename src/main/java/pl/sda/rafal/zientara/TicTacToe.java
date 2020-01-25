@@ -18,6 +18,14 @@ public class TicTacToe {
     }
 
     public void action(int col, int row) {
+        GameResult result = checkResult();
+        if (result != GameResult.PENDING){
+            throw new  IllegalStateException("Game over");
+        }
+        FieldStatus status = getFieldStatus(col, row);
+        if (status != FieldStatus.EMPTY) {
+            throw new IllegalStateException("Pole zajete");
+        }
         if (isOTurn) {
             board[row][col] = FieldStatus.O;
             isOTurn = false;
@@ -33,12 +41,75 @@ public class TicTacToe {
                 System.out.println("-+-+-");
             }
             for (int j = 0; j < BOARD_SIZE; j++) {
-                System.out.print(getFieldStatus(j,i).getText());
-                if (j < BOARD_SIZE-1){
+                System.out.print(getFieldStatus(j, i).getText());
+                if (j < BOARD_SIZE - 1) {
                     System.out.print("|");
                 }
-            } System.out.println();
-
             }
+            System.out.println();
+
         }
     }
+
+    public GameResult checkResult() {
+        if (isDiagonallyRightWin(FieldStatus.X) ||
+                isDiagonallyLeftWin(FieldStatus.X) ||
+                isHorizontalWin(FieldStatus.X) ||
+                isVerticalWin(FieldStatus.X)) {
+            return GameResult.PLAYER_X_WIN;
+        } else if (isDiagonallyRightWin(FieldStatus.O) ||
+                isDiagonallyLeftWin(FieldStatus.O) ||
+                isVerticalWin(FieldStatus.O) ||
+                isHorizontalWin(FieldStatus.O)) {
+            return GameResult.PLAYER_O_WIN;
+        } else if (isDraw()) return GameResult.DRAW;
+        else return GameResult.PENDING;
+    }
+
+    private boolean isHorizontalWin(FieldStatus player) {
+        for (int i = 0; i < BOARD_SIZE; i++) { //i to row
+            FieldStatus col1 = getFieldStatus(0, i);
+            FieldStatus col2 = getFieldStatus(1, i);
+            FieldStatus col3 = getFieldStatus(2, i);
+            if (col1 == player && col2 == player && col3 == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean isVerticalWin(FieldStatus player) {
+        for (int i = 0; i < BOARD_SIZE; i++) { //i to row
+            FieldStatus row1 = getFieldStatus(i, 0);
+            FieldStatus row2 = getFieldStatus(i, 1);
+            FieldStatus row3 = getFieldStatus(i, 2);
+            if (row1 == player && row2 == player && row3 == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean isDiagonallyLeftWin(FieldStatus player) {
+            FieldStatus pos1 = getFieldStatus(0, 0);
+            FieldStatus pos2 = getFieldStatus(1, 1);
+            FieldStatus pos3 = getFieldStatus(2, 2);
+        return pos1 == player && pos2 == player && pos3 == player;
+    }
+
+    private boolean isDiagonallyRightWin(FieldStatus player) {
+        FieldStatus pos1 = getFieldStatus(2, 0);
+        FieldStatus pos2 = getFieldStatus(1, 1);
+        FieldStatus pos3 = getFieldStatus(0, 2);
+        return pos1 == player && pos2 == player && pos3 == player;
+    }
+
+    private boolean isDraw (){
+        for (int i = 0; i <BOARD_SIZE ; i++) {
+            for (int j = 0; j <BOARD_SIZE ; j++) {
+                if (getFieldStatus(i,j) == FieldStatus.EMPTY)
+                    return false;
+            }
+
+        }return true;
+    }
+}
