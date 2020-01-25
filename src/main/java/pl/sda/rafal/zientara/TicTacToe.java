@@ -37,6 +37,8 @@ public class TicTacToe {
 //        -+-+-
 //        X|O|X
 
+        System.out.println("Trololo");
+
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 FieldStatus status = getFieldStatus(j, i);
