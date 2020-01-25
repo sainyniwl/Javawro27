@@ -7,10 +7,5 @@ public class Main {
 
         Runnable run = () -> System.out.println("lol");
 
-        // given
-
-        //when
-
-        //then
     }
 }
