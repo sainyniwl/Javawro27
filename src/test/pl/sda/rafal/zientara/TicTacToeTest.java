@@ -2,8 +2,10 @@ package pl.sda.rafal.zientara;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TicTacToeTest {
     TicTacToe game;
@@ -30,6 +32,7 @@ class TicTacToeTest {
 
         //when
         game.action(0, 0);
+        game.printBoard();
         FieldStatus status = game.getFieldStatus(0, 0);
 
         //then
@@ -49,5 +52,53 @@ class TicTacToeTest {
         //then
         assertEquals(FieldStatus.O, status);
     }
+
+    @Test
+    public void actionShouldThrowIfFieldIsTaken(){
+        //given
+        game.action(0,0);
+
+        //when
+        assertThrows(IllegalStateException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                game.action(0,0);
+            }
+        });
+
+    }
+
+    @Test
+    public void playerXCanWinHorizontally(){
+        game.action(0,0);
+        game.action(1,0);
+        game.action(0,1);
+        game.action(1,1);
+        game.action(0,2);
+        game.printBoard();
+
+
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+    }
+
+    @Test
+    public void playerXCanWinVerically(){
+        game.action(0,1);
+        game.action(1,0);
+        game.action(1,1);
+        game.action(1,2);
+        game.action(2,1);
+
+
+        game.printBoard();
+
+
+        GameResult result = game.checkResult();
+
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+    }
+
 
 }
