@@ -3,6 +3,7 @@ package pl.sda.rafal.zientara;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -50,6 +51,137 @@ class TicTacToeTest {
 
         game.printBoard();
 
+
+    }
+
+    @Test
+    public void actionShouldThrowIfFieldIsTaken() {
+
+        game.action(0, 0);
+
+        assertThrows(IllegalStateException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                game.action(0,0);
+            }
+        });
+        game.printBoard();
+    }
+
+    @Test
+    public void playerXCanWinHorizontally(){
+
+        game.action(0,0);
+        game.action(1, 0);
+        game.action(0, 1);
+        game.action(1, 1);
+        game.action(0, 2);
+        game.printBoard();
+
+        //when
+        GameResult result = game.checkResult();
+
+        //then
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+
+    }
+
+    @Test
+    public void playerXCanWinVertically(){
+
+        game.action(0,1);
+        game.action(1, 0);
+        game.action(1, 1);
+        game.action(1, 2);
+        game.action(2, 1);
+        game.printBoard();
+
+        //when
+        GameResult result = game.checkResult();
+
+        //then
+        assertEquals(GameResult.PLAYER_X_WIN, result);
+
+    }
+
+    @Test
+    public void playerOCanWinDiagonally(){
+
+        game.action(0,1);
+        game.action(0, 0);
+        game.action(1, 2);
+        game.action(1, 1);
+        game.action(2, 0);
+        game.action(2, 2);
+        game.printBoard();
+
+        //when
+        GameResult result = game.checkResult();
+
+        //then
+        assertEquals(GameResult.PLAYER_0_WIN, result);
+
+    }
+
+    @Test
+    public void playerOCanWinDiagonallyFromRight(){
+
+        game.action(0,1);
+        game.action(0, 2);
+        game.action(1, 2);
+        game.action(1, 1);
+        game.action(2, 1);
+        game.action(2, 0);
+        game.printBoard();
+
+        //when
+        GameResult result = game.checkResult();
+
+        //then
+        assertEquals(GameResult.PLAYER_0_WIN, result);
+
+    }
+    @Test
+    public void isGameOver(){
+
+        //given
+        game.action(0,0);
+        game.action(1, 0);
+        game.action(0, 1);
+        game.action(1, 1);
+        game.action(0, 2);
+        game.printBoard();
+
+
+        //when then
+        assertThrows(IllegalStateException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                game.action(1,2);
+            }
+        });
+    }
+
+    @Test
+    public void isDraw(){
+
+        //given
+        game.action(0,1);
+        game.action(0,0);
+        game.action(0,2);
+        game.action(1,1);
+        game.action(1,0);
+        game.action(1,2);
+        game.action(2,1);
+        game.action(2,0);
+        game.action(2,2);
+        game.printBoard();
+
+        //when
+        GameResult result = game.checkResult();
+
+        //then
+        assertEquals(GameResult.DRAW, result);
 
     }
 
