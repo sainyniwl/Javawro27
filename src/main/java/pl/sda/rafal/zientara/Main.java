@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FIrstWindow fIrstWindow = new FIrstWindow();
+        TicTacToeWindow ticTacToeWindow = new TicTacToeWindow();
 
     }
 }
