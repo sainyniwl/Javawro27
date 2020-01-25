@@ -1,27 +1,26 @@
 package pl.sda.rafal.zientara;
 
-class TicTacToe {
+public class TicTacToe {
 
-    private static final int BOARD_SIZE = 3;
+    public static final int BOARD_SIZE = 3;
     private boolean isOTurn = false;
 
     private FieldStatus[][] board = new FieldStatus[BOARD_SIZE][BOARD_SIZE];
 
-    TicTacToe() {
+    public TicTacToe() {
 
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 board[i][j] = FieldStatus.EMPTY;
             }
-
         }
     }
 
-    FieldStatus getFieldStatus(int row, int col) {
+    public FieldStatus getFieldStatus(int row, int col) {
         return board[row][col];
     }
 
-    void action(int row, int col) {
+    public void action(int row, int col) {
         FieldStatus status = getFieldStatus(row, col);
         GameResult checkResult = checkResult();
 
@@ -56,7 +55,7 @@ class TicTacToe {
 
     }
 
-    GameResult checkResult() {
+    public GameResult checkResult() {
 
        if(isHorizontalWin(FieldStatus.X))
            return GameResult.PLAYER_X_WIN;
