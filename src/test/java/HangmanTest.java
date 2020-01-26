@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pl.sda.rafal.zientara.hangman.Hangman;
 
 import static org.junit.jupiter.api.Assertions.*;
 

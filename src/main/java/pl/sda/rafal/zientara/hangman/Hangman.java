@@ -1,3 +1,5 @@
+package pl.sda.rafal.zientara.hangman;
+
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -44,5 +46,16 @@ public class Hangman {
 
     public int getHp() {
         return hp;
+    }
+
+    public boolean isPuzzleSolved() {
+        return getOutput().equals(puzzle);
+    }
+
+    public boolean isDeath(){
+        return getHp() == 0;
+    }
+    public boolean isGameOver(){
+        return isPuzzleSolved() || isDeath();
     }
 }
