@@ -2,7 +2,12 @@ package pl.sda.rafal.zientara.tdd.RockPaperScissor.Players;
 
 import pl.sda.rafal.zientara.tdd.RockPaperScissor.GameAction;
 
-public class RandomPlayer implements Player {
+public class RandomPlayer extends Player {
+
+    public RandomPlayer(String nick) {
+        super(nick);
+    }
+
     @Override
     public GameAction getAction() {
         double random = Math.random() * 100; // od 0 do 99.(9)

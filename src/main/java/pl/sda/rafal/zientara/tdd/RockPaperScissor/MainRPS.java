@@ -6,15 +6,16 @@ import pl.sda.rafal.zientara.tdd.RockPaperScissor.Players.ScannerPlayer;
 
 public class MainRPS {
     public static void main(String[] args) {
-        Player player1 = new RandomPlayer();
-        Player player2 = new ScannerPlayer();
+        Player player1 = new RandomPlayer("Elo");
+        Player player2 = new ScannerPlayer("AdS");
 
+
+        System.out.println(player1.getNick() + " VS " + player2.getNick());
         GameAction action1 = player1.getAction();
         GameAction action2 = player2.getAction();
-
         GameResult result = getResult(action1, action2);
-        System.out.println("Player 1 action: " + action1);
-        System.out.println("Player 2 action: " + action2);
+        System.out.println("Player " + player1.getNick() +  " action: " + action1);
+        System.out.println("Player " + player2.getNick() +  " action: " + action2);
         System.out.println(result);
     }
 
