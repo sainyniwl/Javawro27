@@ -5,17 +5,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginWindow {
+    private JFrame frame;
     private JTextField passwordInput;
     private JButton loginButton;
     private LoginListener listener;
 
     public LoginWindow() {
-        JFrame frame = new JFrame("Podaj hasło");
+        frame = new JFrame("Podaj hasło");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setSize(300, 350);
 
-        passwordInput = new JTextField("password?");
+        passwordInput = new JPasswordField("password?");
         passwordInput.setBounds(50, 50, 200, 100);
         frame.add(passwordInput);
 
@@ -37,8 +38,12 @@ public class LoginWindow {
         this.listener = listener;
     }
 
-    public String getText2() {
-        return passwordInput.getText();
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public void hide() {
+        frame.setVisible(false);
     }
 
     public interface LoginListener {
