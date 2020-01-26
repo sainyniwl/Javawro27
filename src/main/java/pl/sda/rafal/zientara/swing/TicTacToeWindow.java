@@ -24,8 +24,8 @@ public class TicTacToeWindow {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         GridLayout gridLayout = new GridLayout(3 ,3);
-
         frame.setLayout(gridLayout);
+
         for (int i=0; i<9; i++) {
             int col = i % TicTacToe.BOARD_SIZE;
             int row = i / TicTacToe.BOARD_SIZE;
@@ -34,11 +34,12 @@ public class TicTacToeWindow {
             button.addActionListener(new ActionListener() { // pokazywanie kliknięć
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    System.out.println("col" + col);
-                    System.out.println("row" + row);
+                    System.out.println("col " + col);
+                    System.out.println("row " + row);
                     game.action(col, row);
                     FieldStatus status = game.getFieldStatus(col, row);
                     button.setText(status.getText());
+                    button.setBackground(Color.GREEN);
                     frame.setTitle(game.checkResult().toString());
                 }
             });
