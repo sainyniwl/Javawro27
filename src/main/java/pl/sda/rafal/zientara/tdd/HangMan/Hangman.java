@@ -44,7 +44,16 @@ else System.out.println("You lost");
         }
 
     public int getHp() {
-
         return hpLeft;
+    }
+
+    public boolean isPuzzleSolved() {
+        return getOutput().equals(puzzle);
+    }
+    public boolean noHp(){
+        return hpLeft==0;
+    }
+    public boolean gameOver() {
+        return isPuzzleSolved() || noHp();
     }
 }
