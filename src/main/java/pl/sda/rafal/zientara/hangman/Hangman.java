@@ -8,10 +8,12 @@ public class Hangman {
 
     private String puzzle;
     private Set<Character> guessedLetter = new LinkedHashSet<>();
-    private int hp = 7;
+    private int hp;
 
     public void setPuzzle(String puzzle) {
         this.puzzle = puzzle;
+        hp = 7;
+        guessedLetter.clear();
     }
 
     public String getOutput() {
@@ -33,18 +35,31 @@ public class Hangman {
 
 
     public void guessLetter(char c) {
-        char smallChar = Character.toLowerCase(c);
-        guessedLetter.add(smallChar);
-        boolean isCorrect = puzzle.toLowerCase().contains(Character.toString(smallChar));
+        if (hp != 0) {
+            char smallChar = Character.toLowerCase(c);
+            guessedLetter.add(smallChar);
+            boolean isCorrect = puzzle.toLowerCase().contains(Character.toString(smallChar));
 
-        if(!isCorrect){
-            hp--;
+            if (!isCorrect) {
+                hp--;
+            }
         }
     }
-
 
     public int getHp() {
         return hp;
     }
 
+    public boolean isPuzzleSolved() {
+
+        return getOutput().equals(puzzle);
+    }
+
+    public boolean isAlive(){
+        return getHp() > 0;
+    }
+
+    public boolean isGameOver(){
+        return !isAlive() || isPuzzleSolved();
+    }
 }

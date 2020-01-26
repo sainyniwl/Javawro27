@@ -129,6 +129,53 @@ class HangmanTest {
         assertEquals(0, hp);
     }
 
-    
+    @Test
+    public void cantGuessAfterDeath(){
+        //given
+        game.guessLetter('C');
+        game.guessLetter('D');
+        game.guessLetter('E');
+        game.guessLetter('F');
+        game.guessLetter('G');
+        game.guessLetter('H');
+        game.guessLetter('I');
+
+        //when
+        game.guessLetter('m');
+
+        //then
+        int hp = game.getHp();
+        assertEquals(0, hp);
+        assertEquals("... .. ....", game.getOutput());
+
+    }
+
+    @Test
+    public void sameLetterCauseDamage(){
+        //given
+
+        //when
+        game.guessLetter('x');
+        game.guessLetter('x');
+
+        //then
+        int hp = game.getHp();
+        assertEquals(5, hp);
+    }
+
+    @Test
+    public void gameIsRestartedAfterSettingNewPuzzle(){
+        //given
+//        game.guessLetter('a');
+
+        //when
+        game.setPuzzle("Ptaki latajo kluczem");
+
+        //then
+        assertEquals(7, game.getHp());
+        assertEquals("..... ...... .......", game.getOutput());
+
+
+    }
 
 }
