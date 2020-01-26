@@ -23,4 +23,12 @@ public class Input1Window {
         frame.setLayout(null);
         frame.setVisible(true);
     }
+
+    public String getText1() {
+        return textView.getText();
+    }
+
+    public void setMergedText(String s) {
+        label.setText(s);
+    }
 }
