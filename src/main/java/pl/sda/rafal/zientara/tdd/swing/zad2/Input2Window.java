@@ -43,6 +43,12 @@ public class Input2Window {
 
     public interface MergeListener {
         void onMergeClicked();
+
+        //od javy 8
+        default void myDef() {
+            System.out.println("udaje ze klikam");
+            onMergeClicked();
+        }
     }
 
 }
