@@ -7,8 +7,11 @@ import java.util.Set;
 public class Hangman {
 private String puzzle;
 private Set<Character> guessedLetters = new LinkedHashSet<>();
+private int hpLeft;
 
     public void setPuzzle(String puzzle) {
+       hpLeft=7;
+       guessedLetters.clear();
         this.puzzle = puzzle;
     }
 
@@ -21,13 +24,27 @@ private Set<Character> guessedLetters = new LinkedHashSet<>();
                 if (guessedLetters.contains(Character.toLowerCase(c))) {
                     output.append(c);
                 }
-                else output.append(".");
+                else {
+                    output.append(".");
+                }
             }
         }
         return output.toString();
     }
 
     public void guessLetter(char c) {
-guessedLetters.add(Character.toLowerCase(c));
+if (hpLeft !=0) {
+    char smallChar = Character.toLowerCase(c);
+    guessedLetters.add(smallChar);
+    boolean isCorrect = puzzle.toLowerCase()
+            .contains(Character.toString(smallChar));
+    if (!isCorrect) hpLeft--;
+}
+else System.out.println("You lost");
         }
+
+    public int getHp() {
+
+        return hpLeft;
+    }
 }

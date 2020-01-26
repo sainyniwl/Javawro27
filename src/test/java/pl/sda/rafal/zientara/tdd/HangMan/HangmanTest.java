@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class HangmanTest {
-    Hangman game;
+    private Hangman game;
 
     @BeforeEach
     public void setup() {
@@ -28,8 +28,6 @@ class HangmanTest {
 
     @Test
     public void correctLetterShouldBeVisible() {
-        Hangman game = new Hangman();
-        game.setPuzzle("Ala ma kota");
         game.guessLetter('m');
         String output = game.getOutput();
         assertEquals("... m. ....", output);
@@ -55,5 +53,77 @@ class HangmanTest {
 
         //then
         assertEquals("... m. ....", output);
+    }
+
+    @Test
+    public void allCorrectLetterShouldBeVisible3() {
+        game.guessLetter('a');
+        game.guessLetter('l');
+        game.guessLetter('m');
+        game.guessLetter('k');
+        game.guessLetter('t');
+        game.guessLetter('o');
+        String output = game.getOutput();
+        assertEquals("Ala ma kota", output);
+    }
+
+    @Test
+    public void isntThere() {
+        game.guessLetter('z');
+        int hpLeft = game.getHp();
+        assertEquals(6, hpLeft);
+    }
+
+    @Test
+    public void playerShouldHave7HpAtStart() {
+        int hpLeft = game.getHp();
+        assertEquals(7, hpLeft);
+    }
+
+    @Test
+    public void wrongGuessesWillKillYou() {
+        game.guessLetter('d');
+        game.guessLetter('b');
+        game.guessLetter('g');
+        game.guessLetter('n');
+        game.guessLetter('v');
+        game.guessLetter('x');
+        game.guessLetter('z');
+        int hpLeft = game.getHp();
+        assertEquals(0, hpLeft);
+    }
+
+    @Test
+    public void cannotGuessAnymore() {
+        game.guessLetter('d');
+        game.guessLetter('b');
+        game.guessLetter('g');
+        game.guessLetter('n');
+        game.guessLetter('v');
+        game.guessLetter('x');
+        game.guessLetter('z');
+        game.guessLetter('m');
+
+        assertEquals(0, game.getHp());
+        assertEquals("... .. ....", game.getOutput());
+    }
+
+    @Test
+    public void wrongGuessCauseDamageFOrTheSameGuess() {
+        game.guessLetter('x');
+        game.guessLetter('x');
+        int hpLeft = game.getHp();
+        assertEquals(5, hpLeft);
+    }
+
+    @Test
+    public void gameIsRestartedAfterSettingNewPuzzle() {
+        //given
+        game.guessLetter('x');
+        game.setPuzzle("Ptaki latajo kluczem");
+
+        //then
+        assertEquals(7, game.getHp());
+        assertEquals("..... ...... .......", game.getOutput());
     }
 }
