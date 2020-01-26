@@ -3,7 +3,7 @@ package pl.sda.rafal.zientara.tdd.hangman;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HangmanTest {
     private Hangman game;
@@ -103,6 +103,20 @@ class HangmanTest {
         assertEquals(6, hp);
     }
 
+
+    @Test
+    public void wrongGuessCauseDamageForTheSameGuess() {
+        // given
+
+        // when
+        game.guessLetter('X');
+        game.guessLetter('X');
+
+        // then
+        int hp = game.getHp();
+        assertEquals(5, hp);
+    }
+
     @Test
     public void playerShouldHave7HpAtStart() {
         // given
@@ -135,8 +149,6 @@ class HangmanTest {
     @Test
     public void cantGuessAfterKill() {
         // given
-//todo
-        // when
         game.guessLetter('C');
         game.guessLetter('D');
         game.guessLetter('E');
@@ -145,9 +157,26 @@ class HangmanTest {
         game.guessLetter('H');
         game.guessLetter('I');
 
+        // when
+        game.guessLetter('m');
+
         // then
-        int hp = game.getHp();
-        assertEquals(0, hp);
+        assertEquals(0, game.getHp());
+        assertEquals("... .. ....", game.getOutput());
+    }
+
+    @Test
+    public void gameIsRestartedAfterSettingNewPuzzle() {
+        // given
+        game.guessLetter('X');
+        game.guessLetter('X');
+
+        // when
+        game.setPuzzle("Ptaki latajo kluczem");
+
+        // then
+        assertEquals(7, game.getHp());
+        assertEquals("..... ...... .......", game.getOutput());
     }
 
 }
