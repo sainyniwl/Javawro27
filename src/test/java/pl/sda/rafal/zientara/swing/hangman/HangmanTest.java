@@ -63,7 +63,7 @@ class HangmanTest {
     }
 
     @Test
-    public void correctToLetterShouldBeVisible_ignoreCase2(){
+    public void correctToLetterShouldBeVisible(){
         //given
         game.guessLetter('a');
         game.guessLetter('m');
@@ -101,7 +101,7 @@ class HangmanTest {
 
         //then
         int hp = game.getHp();
-        assertEquals(7, hp);
+        assertEquals(6, hp);
     }
 
     @Test
@@ -113,7 +113,7 @@ class HangmanTest {
 
         //then
         int hp = game.getHp();
-        assertEquals(6, hp);
+        assertEquals(7, hp);
     }
 //ctrl + shift + strzałki- przenoszenie linijek
     @Test
@@ -135,7 +135,7 @@ class HangmanTest {
     }
 
     @Test
-    public void wrongGuessAfterKillYou(){
+    public void wrongGuessAfterKill(){
         //given
         game.guessLetter('C');
         game.guessLetter('D');
@@ -149,9 +149,9 @@ class HangmanTest {
         game.guessLetter('m');
 
         //then
-        int hp = game.getHp();
+
         assertEquals(0, game.getHp());
-        assertEquals("... m. ....", game.getOutput());
+        assertEquals("... .. ....", game.getOutput());
     }
 
     @Test
@@ -170,6 +170,7 @@ class HangmanTest {
     @Test
     public void gameIsRestartedAfterSettingNewPuzzle(){
         //given
+        game.guessLetter('X');
         game.guessLetter('X');
 
         //when
