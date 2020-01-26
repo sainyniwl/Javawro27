@@ -1,7 +1,7 @@
 package pl.sda.rafal.zientara.LP;
 
 
-public class Main {
+public class MainLP {
 
     public static void main(String[] args) {
 

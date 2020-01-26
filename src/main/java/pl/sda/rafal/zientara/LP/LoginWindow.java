@@ -2,6 +2,9 @@ package pl.sda.rafal.zientara.LP;
 
 import javax.swing.*;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class LoginWindow {
@@ -23,7 +26,25 @@ public class LoginWindow {
         passwordInput = new JPasswordField();
 
         passwordInput.setBounds(50, 50, 200, 100);
+        passwordInput.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                System.out.println(e);
+                if (e.getKeyChar() == 10) {
+                    listener.onLoginClick(passwordInput.getText());
+                }
+            }
 
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
         frame.add(passwordInput);
         loginButton = new JButton("Login");
         loginButton.setBounds(50, 200, 200, 100);
