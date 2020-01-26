@@ -1,4 +1,7 @@
-package pl.sda.rafal.zientara;
+package pl.sda.rafal.zientara.tictactoe;
+
+import pl.sda.rafal.zientara.tictactoe.FieldStatus;
+import pl.sda.rafal.zientara.tictactoe.GameResult;
 
 public class TicTacToe {
 
@@ -41,7 +44,7 @@ public class TicTacToe {
         }
     }
 
-    void printBoard() {
+    public void printBoard() {
         for (int i = 0; i < BOARD_SIZE; i++) {
             System.out.println();
             for (int j = 0; j < BOARD_SIZE; j++) {

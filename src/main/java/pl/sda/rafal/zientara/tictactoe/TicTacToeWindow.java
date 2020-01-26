@@ -1,8 +1,5 @@
-package pl.sda.rafal.zientara.swing;
+package pl.sda.rafal.zientara.tictactoe;
 
-
-import pl.sda.rafal.zientara.FieldStatus;
-import pl.sda.rafal.zientara.TicTacToe;
 
 import javax.swing.*;
 import java.awt.*;

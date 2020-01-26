@@ -7,8 +7,6 @@ public class InputWindow2 {
 
     private JButton button;
     private JTextField secondText;
-    public String text;
-    String secondString;
     private MergeListener listener;
 
     public void setListener(MergeListener listener) {

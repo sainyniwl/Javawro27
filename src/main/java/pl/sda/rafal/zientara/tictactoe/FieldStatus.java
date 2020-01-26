@@ -1,4 +1,4 @@
-package pl.sda.rafal.zientara;
+package pl.sda.rafal.zientara.tictactoe;
 
 public enum FieldStatus {
     EMPTY,
