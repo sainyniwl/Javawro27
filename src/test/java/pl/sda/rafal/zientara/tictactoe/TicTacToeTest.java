@@ -1,4 +1,4 @@
-package pl.sda.rafal.zientara;
+package pl.sda.rafal.zientara.tictactoe;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
