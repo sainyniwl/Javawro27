@@ -27,21 +27,16 @@ public class TicTacToeWindow {
             String text = Integer.toString(i + 1);
             JButton button = new JButton();
             button.setBounds(50, 50, 200, 100);
-            button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    //System.out.println("col " + col);
-                    //System.out.println("row " + row);
-                    try {
-
-
-                        game.action(col, row);
-                        FieldStatus fieldStatus = game.getFieldStatus(col, row);
-                        button.setText(fieldStatus.getText());
-                        frame.setTitle(game.checkStatus().toString());
-                    } catch (Exception error) {
-                        frame.setTitle(error.getMessage());
-                    }
+            button.addActionListener(e -> {
+                //System.out.println("col " + col);
+                //System.out.println("row " + row);
+                try {
+                    game.action(col, row);
+                    FieldStatus fieldStatus = game.getFieldStatus(col, row);
+                    button.setText(fieldStatus.getText());
+                    frame.setTitle(game.checkStatus().toString());
+                } catch (Exception error) {
+                    frame.setTitle(error.getMessage());
                 }
             });
             frame.add(button);
