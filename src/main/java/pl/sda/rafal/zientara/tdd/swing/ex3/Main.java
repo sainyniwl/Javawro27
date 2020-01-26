@@ -10,9 +10,7 @@ if ("okoń".equals(password)) {
     loginWindow.hide();
     new TopSecretWindow();
 } else new WrongPasswordDIalog(loginWindow.getFrame());
-
             }
         });
-
     }
 }
