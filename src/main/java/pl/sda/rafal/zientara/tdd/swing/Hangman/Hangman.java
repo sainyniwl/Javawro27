@@ -46,4 +46,17 @@ public class Hangman {
     public int getHp() {
         return hp;
     }
+
+    public boolean isPuzzleSolved() {
+        return getOutput().equals(puzzle);
+    }
+
+    public boolean isAlive(){
+        return getHp() > 0;
+    }
+
+    public boolean isGameOver(){
+        return isPuzzleSolved() || !isAlive();
+    }
+
 }
