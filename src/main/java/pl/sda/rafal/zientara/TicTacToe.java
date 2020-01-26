@@ -15,6 +15,18 @@ public class TicTacToe {
         }
     }
 
+    public FieldStatus[][] getBoard() {
+        return board;
+    }
+
+    public void setBoard(FieldStatus[][] board) {
+        this.board = board;
+    }
+
+    public void setOTurn(boolean OTurn) {
+        isOTurn = OTurn;
+    }
+
     public FieldStatus getFieldStatus(int col, int row) {
         return board[row][col];
     }
@@ -35,6 +47,18 @@ public class TicTacToe {
             isOTurn = true;
         }
 //        isOTurn = !isOTurn; // inna opcja
+    }
+
+    public void add(int col,int row,FieldStatus fieldStatus){
+        board[row][col] = fieldStatus;
+    }
+
+    public void setAllEmpty(){
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
+                board[i][j] = FieldStatus.EMPTY;
+            }
+        }
     }
 
     public void printBoard() {
@@ -101,11 +125,5 @@ public class TicTacToe {
         }
 
         return GameResult.DRAW;
-
-
-
-
     }
-
-
 }
