@@ -3,6 +3,8 @@ package pl.sda.rafal.zientara.tdd.swing.zad3;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class LoginWindow {
     private JFrame frame;
@@ -18,6 +20,25 @@ public class LoginWindow {
 
         passwordInput = new JPasswordField("password?");
         passwordInput.setBounds(50, 50, 200, 100);
+        passwordInput.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                System.out.println(e);
+                if (e.getKeyChar() == 10) {
+                    listener.onLoginClicked(passwordInput.getText());
+                }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
         frame.add(passwordInput);
 
         loginButton = new JButton("Login");
