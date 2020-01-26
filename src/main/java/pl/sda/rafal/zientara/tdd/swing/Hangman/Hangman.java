@@ -4,11 +4,14 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Hangman {
+    private int hp = 7;
     private String puzzle;
     private Set<Character> guessedLetters = new LinkedHashSet<>();
 
     public void setPuzzle(String puzzle) {
+        this.hp = 7;
         this.puzzle = puzzle;
+        guessedLetters.clear();
     }
 
     public String getOutput() {
@@ -29,6 +32,18 @@ public class Hangman {
     }
 
     public void guessLetter(char c) {
-        guessedLetters.add(Character.toLowerCase(c));
+        if (hp != 0) {
+            char smallChar = Character.toLowerCase(c);
+            guessedLetters.add(Character.toLowerCase(c));
+            boolean isCorrect = puzzle.toLowerCase().contains(Character.toString(smallChar));
+
+            if (!isCorrect){
+                hp--;
+            }
+        }
+    }
+
+    public int getHp() {
+        return hp;
     }
 }
