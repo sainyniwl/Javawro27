@@ -35,12 +35,15 @@ public class TicTocWindow {
             b.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
-                    System.out.println(col+ "col");
-                    System.out.println(row+ "row");
-                    game.action(col,row);
-                    FieldStatus status= game.getFieldStatus(col,row);
+                    try {
+                    game.action(col, row);
+                    FieldStatus status = game.getFieldStatus(col, row);
                     b.setText(status.getEmpty());
                     f.setTitle(game.checkResult().toString());
+                }catch (Exception e){
+                        f.setTitle(e.getMessage());
+                    }
+
                 }
             });
             f.add(b);

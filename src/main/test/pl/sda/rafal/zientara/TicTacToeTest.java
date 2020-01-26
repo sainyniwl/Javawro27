@@ -154,7 +154,7 @@ public void setup() {
 
         assertThrows(IllegalStateException.class, new Executable() {
             @Override
-            public void execute() throws Throwable {
+            public void execute() {
                 game.action(2,1);
             }
         });
