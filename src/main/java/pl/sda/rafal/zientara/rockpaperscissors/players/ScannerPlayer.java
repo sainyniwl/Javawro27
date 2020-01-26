@@ -4,11 +4,16 @@ import pl.sda.rafal.zientara.rockpaperscissors.GameAction;
 
 import java.util.Scanner;
 
-public class ScannerPlayer implements Player {
+public class ScannerPlayer extends Player {
+
+    public ScannerPlayer(String nick) {
+        super(nick);
+    }
+
     @Override
     public GameAction getAction() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj akcję R/P/S");
+        System.out.println( getNick() + " podaj akcję R/P/S");
         while (true) {
         String next = scanner.next();
             switch (next) {

@@ -2,8 +2,11 @@ package pl.sda.rafal.zientara.rockpaperscissors.players;
 
 import pl.sda.rafal.zientara.rockpaperscissors.GameAction;
 
-public class RandomPlayer implements Player{
+public class RandomPlayer extends Player {
 
+    public RandomPlayer(String nick) {
+        super(nick);
+    }
 
     @Override
     public GameAction getAction() {
