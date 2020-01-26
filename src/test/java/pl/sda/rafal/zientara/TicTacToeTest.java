@@ -3,6 +3,9 @@ package pl.sda.rafal.zientara;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
+import pl.sda.rafal.zientara.tdd.tictactoe.FieldStatus;
+import pl.sda.rafal.zientara.tdd.tictactoe.GameResult;
+import pl.sda.rafal.zientara.tdd.tictactoe.TicTacToe;
 
 import static org.junit.jupiter.api.Assertions.*;
 

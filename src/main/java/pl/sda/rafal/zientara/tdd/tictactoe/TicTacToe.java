@@ -1,4 +1,4 @@
-package pl.sda.rafal.zientara;
+package pl.sda.rafal.zientara.tdd.tictactoe;
 
 public class TicTacToe {
     public static final int BOARD_SIZE = 3;

@@ -1,7 +1,7 @@
-package pl.sda.rafal.zientara.swing;
+package pl.sda.rafal.zientara.tdd.swing;
 
-import pl.sda.rafal.zientara.FieldStatus;
-import pl.sda.rafal.zientara.TicTacToe;
+import pl.sda.rafal.zientara.tdd.tictactoe.FieldStatus;
+import pl.sda.rafal.zientara.tdd.tictactoe.TicTacToe;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,15 +28,18 @@ public class TicTacToeWindow {
             int row = i / TicTacToe.BOARD_SIZE;
 //            String text = Integer.toString(i);
             JButton button = new JButton();
+            button.setBackground(Color.MAGENTA);
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent event) {
                     try {
                         System.out.println("col " + col);
                         System.out.println("row " + row);
+                        System.out.println();
                         game.action(col, row);
                         FieldStatus status = game.getFieldStatus(col, row);
                         button.setText(status.getText());
+                        button.setBackground(Color.GRAY);
                         frame.setTitle(game.checkResult().toString());
                     } catch (Exception error) {
                         frame.setTitle(error.getMessage());
