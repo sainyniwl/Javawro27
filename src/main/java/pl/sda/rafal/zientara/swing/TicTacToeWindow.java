@@ -30,12 +30,17 @@ public class TicTacToeWindow {
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
+                    try {
+
 //                    System.out.println("col" + col);
 //                    System.out.println("row" + row);
-                    game.action(col,row);
-                    FieldStatus fieldStatus = game.getFieldStatus(col,row);
-                    button.setText(fieldStatus.getText());
-                    frame.setTitle(game.checkResult().toString());
+                        game.action(col, row);
+                        FieldStatus fieldStatus = game.getFieldStatus(col, row);
+                        button.setText(fieldStatus.getText());
+                        frame.setTitle(game.checkResult().toString());
+                    }catch (Exception error){
+                        frame.setTitle(error.getMessage());
+                    }
                 }
             });
         frame.add(button);
