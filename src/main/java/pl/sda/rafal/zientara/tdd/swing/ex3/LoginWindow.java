@@ -8,13 +8,14 @@ public class LoginWindow {
     private JTextField passwordInput;
     private JButton loginButton;
     private LoginListener listener;
+    private JFrame frame;
 
     public LoginWindow() {
-        JFrame frame = new JFrame("Podaj Hasło");
+        frame = new JFrame("Podaj Hasło");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setSize(300, 350);
-        passwordInput = new JTextField("password?");
+        passwordInput = new JPasswordField("password?");
         passwordInput.setBounds(50, 50, 200, 100);
         frame.add(passwordInput);
         loginButton = new JButton("Login");
@@ -38,7 +39,14 @@ public class LoginWindow {
         return passwordInput.getText();
     }
 
+    public JFrame getFrame() {
+        return frame;
+    }
+
     public interface LoginListener {
         void onLoginClicked(String password);
+    }
+    public void hide() {
+        frame.setVisible(false);
     }
 }

@@ -6,9 +6,11 @@ public class Main {
         loginWindow.setListener(new LoginWindow.LoginListener() {
             @Override
             public void onLoginClicked(String password) {
-                System.out.println(password);
+if ("okoń".equals(password)) {
+    loginWindow.hide();
+    new TopSecretWindow();
+} else new WrongPasswordDIalog(loginWindow.getFrame());
 
-                TopSecretWindow window = new TopSecretWindow();
             }
         });
 

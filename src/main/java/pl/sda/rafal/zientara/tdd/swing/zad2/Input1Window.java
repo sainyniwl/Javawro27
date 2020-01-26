@@ -6,6 +6,7 @@ public class Input1Window {
     private JTextField textView1;
     private JLabel label;
 
+
     public Input1Window(){
         JFrame frame = new JFrame("Input 1");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
