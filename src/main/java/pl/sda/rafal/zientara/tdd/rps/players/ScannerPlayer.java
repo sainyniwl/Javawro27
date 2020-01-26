@@ -4,12 +4,17 @@ import pl.sda.rafal.zientara.tdd.rps.GameAction;
 
 import java.util.Scanner;
 
-public class ScannerPlayer implements Player {
+public class ScannerPlayer extends Player {
+
+    public ScannerPlayer(String nick) {
+        super(nick);
+    }
+
     @Override
     public GameAction getAction() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Podaj akcje r/p/s");
+        System.out.println(getNick() + ": Podaj akcje r/p/s");
         while (true) {
             String input = scanner.next().toLowerCase();
             switch (input) {

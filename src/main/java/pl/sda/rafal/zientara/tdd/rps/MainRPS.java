@@ -8,15 +8,17 @@ import pl.sda.rafal.zientara.tdd.rps.players.StonedPlayer;
 public class MainRPS {
 
     public static void main(String[] args) {
-        Player player1 = new RandomPlayer();
-        Player player2 = new ScannerPlayer();
+        Player player1 = new RandomPlayer("Janusz Dzbanusz");
+        Player player2 = new ScannerPlayer("buziaczek32");
 //        Player player2 = () -> GameAction.PAPER;//lambda
+
+        System.out.println(player1.getNick() + " vs " + player2.getNick());
 
         GameAction action1 = player1.getAction();
         GameAction action2 = player2.getAction();
 
-        System.out.println("player 1 action: " + action1);
-        System.out.println("player 2 action: " + action2);
+        System.out.println(player1.getNick() + " action: " + action1);
+        System.out.println(player2.getNick() + "player 2 action: " + action2);
 
         GameResult result = getResult(action1, action2);
 

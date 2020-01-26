@@ -2,7 +2,12 @@ package pl.sda.rafal.zientara.tdd.rps.players;
 
 import pl.sda.rafal.zientara.tdd.rps.GameAction;
 
-public class RandomPlayer implements Player {
+public class RandomPlayer extends Player {
+
+    public RandomPlayer(String nick) {
+        super(nick);
+    }
+
     @Override
     public GameAction getAction() {
         double random = Math.random() * 100; //0 - 99,(9)
