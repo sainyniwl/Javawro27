@@ -2,16 +2,15 @@ package pl.sda.rafal.zientara.tdd.RockPaperScissors;
 
 public class Main {
     public static void main(String[] args) {
-        Player player1 = new ScannerPlayer();
-        Player player2 = new RandomPlayer();
+        Player player1 = new ScannerPlayer("Luc");
+        Player player2 = new RandomPlayer("Computer");
 
         while (true) {
-            System.out.println(ReturnRandomInt.random());
             GameAction action1 = player1.getAction();
             GameAction action2 = player2.getAction();
             GameResult result = getResult(action1, action2);
-            System.out.println("Player 1: " + action1);
-            System.out.println("Player 2: " + action2);
+            System.out.println("Player "+player1.getNick()+": " + action1);
+            System.out.println("Player "+player2.getNick()+": "+action2);
             System.out.println(result);
         }
     }
