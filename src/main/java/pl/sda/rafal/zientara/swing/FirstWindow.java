@@ -1,5 +1,7 @@
 package pl.sda.rafal.zientara.swing;
 
+import pl.sda.rafal.zientara.swing.login.LoginWindow;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,5 +40,17 @@ private int clickCount = 0;
 
         frame.setLayout(null);
         frame.setVisible(true);
+    }
+
+    public static class Main {
+        public static void main(String[] args) {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.setListener(new LoginWindow.LoginListener() {
+                @Override
+                public void onLoginClicked(String password) {
+                    System.out.println(password);
+                }
+            });
+        }
     }
 }
