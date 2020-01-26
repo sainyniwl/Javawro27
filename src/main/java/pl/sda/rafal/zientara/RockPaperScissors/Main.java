@@ -7,8 +7,10 @@ import pl.sda.rafal.zientara.RockPaperScissors.players.ScannerPlayer;
 public class Main {
 
     public static void main(String[] args) {
-        Player player1 = new ScannerPlayer();
-        Player player2 = new RandomPlayer();
+        Player player1 = new ScannerPlayer("Owca");
+        Player player2 = new RandomPlayer("Lama");
+
+        System.out.println("Starcie graczy: " + player1.getNick() + " vs " + player2.getNick());
 
         GameAction action1 = player1.getAction();
         GameAction action2 = player2.getAction();

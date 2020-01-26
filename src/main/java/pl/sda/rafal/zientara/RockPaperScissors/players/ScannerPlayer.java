@@ -4,12 +4,16 @@ import pl.sda.rafal.zientara.RockPaperScissors.GameAction;
 
 import java.util.Scanner;
 
-public class ScannerPlayer implements Player{
+public class ScannerPlayer extends Player{
+
+    public ScannerPlayer(String nick) {
+        super(nick);
+    }
 
     @Override
     public GameAction getAction() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj akcję r/p/s");
+        System.out.println(getNick() + " Podaj akcję r/p/s");
         while (true) {
         String input = scanner.next().toLowerCase();
             switch (input) {
@@ -23,7 +27,7 @@ public class ScannerPlayer implements Player{
                 case "paper":
                     return GameAction.PAPER;
                 default:
-                    System.out.println("Wybierz jedną z dostępnych opcji!");
+                    System.out.println(getNick() + "! Wybierz jedną z dostępnych opcji!");
             }
         }
     }
