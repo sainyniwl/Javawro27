@@ -3,6 +3,8 @@ package pl.sda.rafal.zientara.tdd.hangman;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+// TODO
+
 public class Hangman {
     private String puzzle;
     private Set<Character> guessedLetters = new LinkedHashSet<>();
