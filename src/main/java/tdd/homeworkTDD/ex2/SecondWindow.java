@@ -1,4 +1,4 @@
-package tdd.swing.ex2;
+package tdd.homeworkTDD.ex2;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

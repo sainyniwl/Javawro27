@@ -1,4 +1,4 @@
-package tdd.swing.ex2;
+package tdd.homeworkTDD.ex2;
 import javax.swing.*;
 
 public class FirstWindow {

@@ -1,4 +1,4 @@
-package tdd.swing.ex5;
+package tdd.homeworkTDD.ex5;
 
 import javax.swing.*;
 import java.awt.*;

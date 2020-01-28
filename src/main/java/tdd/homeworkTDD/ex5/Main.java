@@ -1,7 +1,8 @@
-package tdd.swing.additionalEx;
+package tdd.homeworkTDD.ex5;
 
 public class Main {
     public static void main(String[] args) {
-        new FindByRegularExpression();
+        new CountLettersAndWords();
     }
+
 }

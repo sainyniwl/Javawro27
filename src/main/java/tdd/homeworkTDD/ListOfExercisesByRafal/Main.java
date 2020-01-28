@@ -1,4 +1,4 @@
-package tdd.homeworkTDD;
+package tdd.homeworkTDD.ListOfExercisesByRafal;
 
 public class Main {
     public static void main(String[] args) {

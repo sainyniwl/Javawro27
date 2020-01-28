@@ -1,4 +1,4 @@
-package tdd.homeworkTDD;
+package tdd.homeworkTDD.ListOfExercisesByRafal;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package tdd.swing.ex3;
+package tdd.homeworkTDD.ex3;
 
 public class Main {
     public static void main(String[] args) {

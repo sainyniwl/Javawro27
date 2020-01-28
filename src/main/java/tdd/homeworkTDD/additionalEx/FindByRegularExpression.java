@@ -1,4 +1,4 @@
-package tdd.swing.additionalEx;
+package tdd.homeworkTDD.additionalEx;
 
 import org.joda.time.LocalDate;
 

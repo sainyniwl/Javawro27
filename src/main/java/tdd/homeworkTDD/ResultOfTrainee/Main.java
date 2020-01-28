@@ -1,4 +1,4 @@
-package tdd.swing.ex2.Trainee;
+package tdd.homeworkTDD.ResultOfTrainee;
 
 public class Main {
 

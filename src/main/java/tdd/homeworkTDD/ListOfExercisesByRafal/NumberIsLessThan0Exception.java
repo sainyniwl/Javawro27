@@ -1,4 +1,4 @@
-package tdd.homeworkTDD;
+package tdd.homeworkTDD.ListOfExercisesByRafal;
 
 public class NumberIsLessThan0Exception extends IllegalArgumentException{
     public void print() {

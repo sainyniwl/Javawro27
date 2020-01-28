@@ -2,6 +2,8 @@ package tdd.homeworkTDD;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import tdd.homeworkTDD.ListOfExercisesByRafal.Homework;
+import tdd.homeworkTDD.ListOfExercisesByRafal.NumberIsLessThan0Exception;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package tdd.swing.ex2.Trainee;
+package tdd.homeworkTDD.ResultOfTrainee;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

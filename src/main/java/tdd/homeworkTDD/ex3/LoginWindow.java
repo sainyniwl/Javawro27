@@ -1,4 +1,4 @@
-package tdd.swing.ex3;
+package tdd.homeworkTDD.ex3;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
