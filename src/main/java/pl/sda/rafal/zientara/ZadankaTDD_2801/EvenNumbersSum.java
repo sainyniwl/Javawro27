@@ -4,9 +4,11 @@ public class EvenNumbersSum {
 
     public int sumOfEven(int[] numbers) {
         int result = 0;
-        for (int number : numbers) {
-            if (number % 2 == 0) {
-                result += number;
+        if (numbers != null) {
+            for (int number : numbers) {
+                if (number % 2 == 0) {
+                    result += number;
+                }
             }
         }
         return result;
