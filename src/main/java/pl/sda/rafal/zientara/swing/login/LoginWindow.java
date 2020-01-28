@@ -33,6 +33,7 @@ public class LoginWindow {
 
         loginButton = new JButton("Log in!");
         loginButton.setBounds(50, 200, 200, 100);
+
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
