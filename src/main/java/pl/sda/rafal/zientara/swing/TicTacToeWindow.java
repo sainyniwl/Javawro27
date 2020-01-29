@@ -1,5 +1,6 @@
 package pl.sda.rafal.zientara.swing;
 
+
 import pl.sda.rafal.zientara.FieldStatus;
 import pl.sda.rafal.zientara.TicTacToe;
 
