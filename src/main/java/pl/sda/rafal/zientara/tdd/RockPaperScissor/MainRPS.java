@@ -6,8 +6,8 @@ import pl.sda.rafal.zientara.tdd.RockPaperScissor.Players.ScannerPlayer;
 
 public class MainRPS {
     public static void main(String[] args) {
-        Player player1 = new RandomPlayer("Elo");
-        Player player2 = new ScannerPlayer("AdS");
+        Player player1 = new RandomPlayer("Konrad AI");
+        Player player2 = new ScannerPlayer("Em");
 
 
         System.out.println(player1.getNick() + " VS " + player2.getNick());

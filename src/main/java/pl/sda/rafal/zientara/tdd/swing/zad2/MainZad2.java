@@ -1,6 +1,6 @@
 package pl.sda.rafal.zientara.tdd.swing.zad2;
 
-public class Main {
+public class MainZad2 {
     public static void main(String[] args) {
         Input1Window window1 = new Input1Window();
         Input2Window window2 = new Input2Window();
