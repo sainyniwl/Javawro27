@@ -1,6 +1,5 @@
 package pl.sda.rafal.zientara.ZadankaTDD_2801;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MedianOfIntArray4 {

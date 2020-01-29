@@ -26,6 +26,15 @@ class MedianOfIntArray4Test {
         assertEquals(3, result);
 
     }
+    @Test
+    public void unSortedMedianTest1() {
+
+        MedianOfIntArray4 array4 = new MedianOfIntArray4();
+        int[] numbers = {4, 5, 1, 3, 2};
+        double result = array4.getMedianOfArray(numbers);
+        assertEquals(3, result);
+
+    }
 
     @Test
     public void isArrayIsNull() {
