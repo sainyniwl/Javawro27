@@ -132,8 +132,35 @@ class HangmanTest {
 
         assertEquals(7, game.getHp());
         assertEquals("..... ...... .......", game.getOutput());
+    }
 
+    @Test
+    public void guessingWholePasswordAtOnce(){
 
+        game.setPuzzle("Bardzo tajne haslo");
+
+        game.guessLetter("Bardzo tajne haslo");
+        assertEquals("Bardzo tajne haslo", game.getOutput());
+    }
+
+    @Test
+    public void playerCantGuessPasswordPartially(){
+
+        game.setPuzzle("Bardzo tajne haslo");
+
+        game.guessLetter("tajne haslo");
+        assertEquals("...... ..... .....", game.getOutput());
+    }
+
+    @Test
+    public void GuessingPartiallyCauseDamage(){
+
+        game.setPuzzle("Bardzo tajne haslo");
+
+        game.guessLetter("tajne haslo");
+
+        assertEquals("...... ..... .....", game.getOutput());
+        assertEquals(6,game.getHp());
     }
 
 }

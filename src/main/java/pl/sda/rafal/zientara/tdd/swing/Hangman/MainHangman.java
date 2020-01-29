@@ -3,6 +3,7 @@ package pl.sda.rafal.zientara.tdd.swing.Hangman;
 import java.util.Scanner;
 
 public class MainHangman {
+
     public static void main(String[] args) {
         Hangman game = new Hangman();
         Scanner reader = new Scanner(System.in);
@@ -12,9 +13,9 @@ public class MainHangman {
 
         while(!game.isGameOver()) {
             System.out.println(String.format("HP: %d/%d", game.getHp(), 7));
-            System.out.println("Podaj litere od a-z (bez polskich znaków):");
+            System.out.println("Podaj litere od a-z, bądź całe hasło (bez polskich znaków):");
             System.out.println("Hasło: " + game.getOutput());
-            char input = reader.nextLine().charAt(0);
+            String input = reader.nextLine();
             game.guessLetter(input);
             System.out.println(game.getOutput());
         }

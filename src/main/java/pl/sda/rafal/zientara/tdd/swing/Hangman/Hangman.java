@@ -43,6 +43,20 @@ public class Hangman {
         }
     }
 
+    public void guessLetter(String password) {
+        if (hp != 0) {
+            boolean isCorrectWholePassword = password.equalsIgnoreCase(puzzle);
+            boolean isCorrectOneLetter = puzzle.toLowerCase().contains(Character.toString(password.charAt(0))) && password.length() == 1;
+            if (isCorrectWholePassword)
+                for (int i = 0; i < password.length(); i++)
+                    guessedLetters.add(Character.toLowerCase(password.charAt(i)));
+            else if (isCorrectOneLetter)
+                guessedLetters.add(Character.toLowerCase(password.charAt(0)));
+            else
+                 hp--;
+        }
+    }
+
     public int getHp() {
         return hp;
     }
