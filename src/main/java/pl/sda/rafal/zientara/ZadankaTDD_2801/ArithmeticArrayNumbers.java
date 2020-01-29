@@ -3,7 +3,7 @@ package pl.sda.rafal.zientara.ZadankaTDD_2801;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class MedianOfArrayNumbers {
+public class ArithmeticArrayNumbers {
     public double medianOfArrayNumbers(int[] numbers) {
 
         if (numbers == null) {
