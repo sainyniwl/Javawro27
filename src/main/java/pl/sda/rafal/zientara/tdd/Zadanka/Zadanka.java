@@ -7,8 +7,7 @@ import java.util.stream.Stream;
 public class Zadanka {
     private int[] items;
 
-    public Zadanka(int[] items) {
-        this.items = items;
+    public Zadanka() {
     }
 
 
@@ -29,9 +28,8 @@ public class Zadanka {
                     .filter(item -> item % 2 == 0)
                     .sum();
             return sum;
-        } else {
+        } else
             return -1;
-        }
     }
 
 

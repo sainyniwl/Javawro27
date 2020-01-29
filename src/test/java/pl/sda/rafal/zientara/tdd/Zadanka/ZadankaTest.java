@@ -11,7 +11,7 @@ class ZadankaTest {
 
     @BeforeEach
     public void start() {
-        algorithms = new Zadanka(items);
+        algorithms = new Zadanka();
     }
 
     @Test
