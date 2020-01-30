@@ -91,6 +91,18 @@ class HangmanTest {
     }
 
     @Test
+    public void whenGuessFullPuzzleOutputShouldBeVisible(){
+        //given
+        game.guessLetter("Ala ma kota");
+
+        //when
+        String output = game.getOutput();
+
+        //then
+        assertEquals("Ala ma kota", output);
+    }
+
+    @Test
     public void playerShouldHave7HpAtStart(){
         //given
 

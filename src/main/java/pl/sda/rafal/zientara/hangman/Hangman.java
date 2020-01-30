@@ -44,6 +44,17 @@ public class Hangman {
         }
     }
 
+    public void guessLetter(String c) {
+        if (hp != 0) {
+            boolean isCorrectWholePassword = c.equalsIgnoreCase(puzzle);
+            if (isCorrectWholePassword)
+                for (int i = 0; i < c.length(); i++)
+                    guessedLetters.add(Character.toLowerCase(c.charAt(i)));
+            else
+                hp--;
+        }
+    }
+
     public int getHp() {
         return hp;
     }
