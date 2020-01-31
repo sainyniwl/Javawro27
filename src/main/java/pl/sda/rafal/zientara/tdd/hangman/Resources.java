@@ -46,7 +46,7 @@ public class Resources {
             "Baza danych"
     );
 
-    public static String getRandomPuzzle(){
+    public static String getRandomPuzzle() {
         Random random = new Random();
         int index = random.nextInt(DATA.size());
         return DATA.get(index);

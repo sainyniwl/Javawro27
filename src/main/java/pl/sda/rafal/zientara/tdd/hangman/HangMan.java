@@ -65,16 +65,15 @@ public class HangMan {
         }
     }
 
+    public String getPuzzle() {
+        return puzzle;
+    }
+
     public void setPuzzle(String text) {
         this.puzzle = text;
         hp = 7;
         guessedLetters = new LinkedHashSet<>();
 
-    }
-
-
-    public String getPuzzle() {
-        return puzzle;
     }
 
     public void guessLetters(char n) {

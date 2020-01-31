@@ -1,7 +1,5 @@
 package pl.sda.rafal.zientara.tdd.swing.zad3;
 
-import jdk.nashorn.internal.scripts.JD;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -52,10 +50,12 @@ class LoginWindow {
                     loginFrame.setVisible(false);
                 }
             }
+
             @Override
             public void keyPressed(KeyEvent e) {
 
             }
+
             @Override
             public void keyReleased(KeyEvent e) {
             }

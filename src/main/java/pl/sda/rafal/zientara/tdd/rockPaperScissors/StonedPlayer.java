@@ -7,7 +7,7 @@ public class StonedPlayer extends Player {
     }
 
     @Override
-    public GameAction getAction( GameAction action) {
+    public GameAction getAction(GameAction action) {
         return action;
     }
 }
