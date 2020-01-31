@@ -179,4 +179,40 @@ class HangmanTest {
         assertEquals("..... ...... .......", game.getOutput());
     }
 
+    @Test
+    public void userCanGuessWholePuzzle() {
+        // given
+
+        // when
+        game.guessPuzzle("Ala ma kota");
+
+        // then
+        assertEquals(7, game.getHp());
+        assertEquals("Ala ma kota", game.getOutput());
+    }
+
+    @Test
+    public void userCanGuessWholePuzzleIgnoreCase() {
+        // given
+
+        // when
+        game.guessPuzzle("ALA MA KOTA");
+
+        // then
+        assertEquals(7, game.getHp());
+        assertEquals("Ala ma kota", game.getOutput());
+    }
+
+    @Test
+    public void guessWholePuzzleUsesTrim() {
+        // given
+
+        // when
+        game.guessPuzzle("       ALA MA KOTA     ");
+
+        // then
+        assertEquals(7, game.getHp());
+        assertEquals("Ala ma kota", game.getOutput());
+    }
+
 }

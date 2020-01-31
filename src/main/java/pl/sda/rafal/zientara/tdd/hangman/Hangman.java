@@ -59,4 +59,14 @@ public class Hangman {
     public boolean isGameOver() {
         return isPuzzleSolved() || !isAlive();
     }
+
+    public void guessPuzzle(String guess) {
+        String normalizedGuess = guess.trim().toLowerCase();
+        String normalizedPuzzle = puzzle.trim().toLowerCase();
+        if (normalizedGuess.equals(normalizedPuzzle)) {
+            for (int i = 0; i < normalizedGuess.length(); i++) {
+                guessedLetters.add(normalizedGuess.charAt(i));
+            }
+        }
+    }
 }
