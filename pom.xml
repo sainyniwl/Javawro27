@@ -12,8 +12,13 @@
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
-
-<<<<<<< HEAD
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.5</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.release>8</maven.compiler.release>
     </properties>
@@ -27,52 +32,5 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-=======
-        </dependency>
-    </dependencies>
-    <properties>
-        <maven.compiler.release>8</maven.compiler.release>
-    </properties><build>
-    <pluginManagement>
->>>>>>> 683b55b8273c22f7ff089a7148c6648f4fb6fff6
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-<<<<<<< HEAD
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-=======
-                <version>3.8.1</version>
-            </plugin>
-        </plugins>
-    </pluginManagement>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>8</source>
-                <target>8</target>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
->>>>>>> 683b55b8273c22f7ff089a7148c6648f4fb6fff6
-
 </project>
