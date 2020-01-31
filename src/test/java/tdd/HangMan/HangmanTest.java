@@ -130,7 +130,13 @@ class HangmanTest {
     public void wholeTextTest() {
         String s = "Ptaki latajo kluczem";
         game.setPuzzle("Ptaki latajo kluczem");
-        game.typeWholeWord(s);
-        assertTrue(game.typeWholeWord(s));
+        game.isWholeWordCorrect(s);
+        assertEquals(7,game.getHp());
+    }
+    @Test
+    public void isTypedTextCorrect() {
+        String s = "Ptaki latajo kluczem";
+        game.setPuzzle("Ptaki latajo kluczem");
+        assertTrue(game.isWholeWordCorrect(s));
     }
 }

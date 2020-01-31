@@ -8,7 +8,6 @@ public class Game {
     private Hangman hangman = new Hangman();
     private String randomPuzzle;
     private int choice;
-    private char c = 'a';
 
     private void startAGame() {
         randomPuzzle = Resources.getRandomPuzzle();
@@ -40,7 +39,7 @@ public class Game {
         System.out.println(hangman.getOutput());
         System.out.println("Podaj litere od a do z");
         Scanner scanner = new Scanner(System.in);
-            c = scanner.nextLine().charAt(0);
+        char c = scanner.nextLine().charAt(0);
         if (matcher(c)) {
             hangman.guessLetter(c);
             System.out.println(hangman.getOutput());
@@ -49,10 +48,7 @@ public class Game {
         else System.out.println("Podaj litere");
     }
     if (choice == 2) {
-        if (hangman.typeWholeWord(randomPuzzle)) {
-            System.out.println("Jesteś zwycięzcą");
-            return;
-        } else hangman.takeOneHp();
+        hangman.typeWholeWord();
     }
         }
         if (hangman.isPuzzleSolved()) {

@@ -1,5 +1,6 @@
 package tdd.HangMan;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -62,9 +63,20 @@ public class Hangman {
         return isPuzzleSolved() || noHp();
     }
 
-    public boolean typeWholeWord(String puzzle){
+    public boolean isWholeWordCorrect(String word) {
+        return word.toLowerCase().equals(puzzle.toLowerCase());
+    }
+    public String playersInput(){
         Scanner scanner = new Scanner(System.in);
-        String word = scanner.nextLine().toLowerCase();
-        return word.equals(puzzle.toLowerCase());
+        return scanner.nextLine().toLowerCase();
+    }
+    public void typeWholeWord(){
+        if (isWholeWordCorrect(playersInput())) {
+            System.out.println("Jesteś zwycięzcą");
+            for (int i = 0; i <playersInput().length(); i++) {
+                guessedLetters.add(playersInput().charAt(i));
+            }
+        }
+        else takeOneHp();
     }
 }
