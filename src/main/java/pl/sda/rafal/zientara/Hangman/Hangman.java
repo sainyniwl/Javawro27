@@ -42,6 +42,19 @@ public class Hangman {
         }
     }
 
+    public void guessLetter(String word) {
+
+        if (hp != 0) {
+            if (word.toLowerCase().equals(puzzle.toLowerCase())) {
+                for (int i = 0; i < word.length(); i++) {
+                    guessedLetter.add(Character.toLowerCase(word.charAt(i)));
+                }
+            } else hp--;
+        }
+
+    }
+
+
     public int getHp() {
         return hp;
     }

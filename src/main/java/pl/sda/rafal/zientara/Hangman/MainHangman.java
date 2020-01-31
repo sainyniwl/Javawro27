@@ -15,10 +15,14 @@ public class MainHangman {
         while (!game.isGameOver()) {
             System.out.println(String.format("HP: %d/%d", game.getHp(), 7));
             System.out.println("Haslo :" + game.getOutput());
-            System.out.println("Enter letter 'a-z' : ");
+            System.out.println("Enter letter 'a-z' or whole word : ");
             String input = scanner.next();
-            char c = input.charAt(0);
-            game.guessLetter(c);
+            if (input.length() == 1) {
+                char c = input.charAt(0);
+                game.guessLetter(c);
+            } else {
+                game.guessLetter(input);
+            }
             System.out.println(game.getOutput());
         }
 

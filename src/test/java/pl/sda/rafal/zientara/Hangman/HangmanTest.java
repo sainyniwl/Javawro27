@@ -140,7 +140,7 @@ class HangmanTest {
     }
 
     @Test
-    public void gameIsRestartedAfterNewPazzle(){
+    public void gameIsRestartedAfterNewPazzle() {
 
         game.guessLetter('x');
 
@@ -148,6 +148,15 @@ class HangmanTest {
 
         assertEquals(7, game.getHp());
         assertEquals("..... ...... .......", game.getOutput());
+    }
+
+    @Test
+    public void correctWordEntered() {
+
+        game.setPuzzle("Ptaki latajo kluczem");
+        game.guessLetter("Ptaki latajo kluczem");
+
+        assertEquals("Ptaki latajo kluczem", game.getOutput());
     }
 
 }
