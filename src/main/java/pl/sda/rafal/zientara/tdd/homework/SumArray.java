@@ -1,5 +1,7 @@
 package pl.sda.rafal.zientara.tdd.homework;
-
+/*
+zad 1
+ */
 public class SumArray {
 
     public static int sumEven(int[] input) {
