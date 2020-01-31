@@ -126,4 +126,11 @@ class HangmanTest {
         assertEquals(7, game.getHp());
         assertEquals("..... ...... .......", game.getOutput());
     }
+    @Test
+    public void wholeTextTest() {
+        String s = "Ptaki latajo kluczem";
+        game.setPuzzle("Ptaki latajo kluczem");
+        game.typeWholeWord(s);
+        assertTrue(game.typeWholeWord(s));
+    }
 }

@@ -32,13 +32,13 @@ public class Hangman {
     }
 
     public void guessLetter(char c) {
-        if (hpLeft != 0) {
-            char smallChar = Character.toLowerCase(c);
-            guessedLetters.add(smallChar);
-            boolean isCorrect = puzzle.toLowerCase()
-                    .contains(Character.toString(smallChar));
-            if (!isCorrect) hpLeft--;
-        } else System.out.println("You lost");
+            if (hpLeft != 0) {
+                char smallChar = Character.toLowerCase(c);
+                guessedLetters.add(smallChar);
+                boolean isCorrect = puzzle.toLowerCase()
+                        .contains(Character.toString(smallChar));
+                if (!isCorrect) hpLeft--;
+            } else System.out.println("You lost");
     }
 
     public int getHp() {
@@ -61,6 +61,7 @@ public class Hangman {
     public boolean gameOver() {
         return isPuzzleSolved() || noHp();
     }
+
     public boolean typeWholeWord(String puzzle){
         Scanner scanner = new Scanner(System.in);
         String word = scanner.nextLine().toLowerCase();
