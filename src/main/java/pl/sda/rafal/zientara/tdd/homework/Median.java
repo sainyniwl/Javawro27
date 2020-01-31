@@ -10,7 +10,7 @@ public class Median {
         } else if (input.length % 2 == 0) {
             int one = input[input.length / 2 - 1];
             int two = input[input.length / 2];
-            return (one + two) / 2f;
+            return Average.count(one, two);
         } else {
             return input[input.length / 2];
         }
