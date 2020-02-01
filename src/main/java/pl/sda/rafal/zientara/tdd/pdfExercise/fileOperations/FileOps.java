@@ -17,10 +17,8 @@ public class FileOps {
 
     public static String readStringFromFile() throws FileNotFoundException {
         StringBuilder temp = new StringBuilder();
-        File file =
-                new File(path);
+        File file = new File(path);
         Scanner sc = new Scanner(file);
-
         while (sc.hasNextLine()){
             temp.append(sc.nextLine());
         }

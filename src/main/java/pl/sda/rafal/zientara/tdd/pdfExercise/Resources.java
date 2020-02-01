@@ -8,7 +8,7 @@ public class Resources {
 
     public static List<String> list() {
         return new LinkedList(Arrays.asList(
-                "Katana - <p>jeden z rodzajów mieczy japońskich, o ogólnej nazwie nihon-tō (jap. 日本刀)[1].</p>\n" +
+                "<a href>Katana</a> - <p>jeden z rodzajów mieczy japońskich, o ogólnej nazwie nihon-tō (jap. 日本刀)[1].</p>\n" +
                         "<p>\n" +
                         "  <br>\n" +
                         "</p>\n" +
@@ -27,7 +27,7 @@ public class Resources {
                         "<p>\n" +
                         "  <br>\n" +
                         "</p>",
-                "Miecz - <p>rodzaj broni białej, charakteryzującej się prostą, obosieczną[a] głownią,&nbsp;</p>\n" +
+                "<a href>Miecz</a> - <p>rodzaj broni białej, charakteryzującej się prostą, obosieczną[a] głownią,&nbsp;</p>\n" +
                         "<p>otwartą rękojeścią oraz najczęściej krzyżowym jelcem. Używany od epoki brązu&nbsp;</p>\n" +
                         "<p>do XVI w. Szczególną popularnością cieszył się w średniowieczu[2][3][4][5].&nbsp;</p>\n" +
                         "<p>Jest bronią sieczno-kolną, umożliwiającą zadawanie zarówno cięć jak i pchnięć.</p>\n" +
@@ -58,7 +58,7 @@ public class Resources {
                         "<p>\n" +
                         "  <br>\n" +
                         "</p>",
-                "Buzdygan - <p>(węg. bozdogan - pałka, tur. - maczuga)&nbsp;</p>\n" +
+                "<a href>Buzdygan</a> - <p>(węg. bozdogan - pałka, tur. - maczuga)&nbsp;</p>\n" +
                         "<p>–broń obuchowa pochodzenia wschodniego, metalowa głowica osadzona na trzonku&nbsp;</p>\n" +
                         "<p>o długości ok. 60 cm. Trzonek był drewniany, okuty blachą lub całkowicie metalowy,&nbsp;</p>\n" +
                         "<p>czasami z ukrytym wewnątrz sztyletem (odmiana perska). Głowica zbudowana była z piór&nbsp;</p>\n" +
@@ -110,7 +110,7 @@ public class Resources {
                         "<p>\n" +
                         "  <br>\n" +
                         "</p>",
-                "Halabarda - <p>dwuręczna broń drzewcowa, która zdobyła popularność między wiekiem XIV a wiekiem XV.&nbsp;</p>\n" +
+                "<a href>Halabarda</a> - <p>dwuręczna broń drzewcowa, która zdobyła popularność między wiekiem XIV a wiekiem XV.&nbsp;</p>\n" +
                         "<p>Typowa halabarda ma ok. 2,5-metrowe[potrzebny przypis] drzewce z głownią łączącą w sobie&nbsp;</p>\n" +
                         "<p>elementy trzech broni: topora z jednej strony, haka z drugiej i włóczni pośrodku&nbsp;</p>\n" +
                         "<p>(w postaci długiego grotu). Dzięki temu była uniwersalna, mogąc służyć zarówno do cięcia&nbsp;</p>\n" +

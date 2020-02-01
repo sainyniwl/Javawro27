@@ -170,8 +170,8 @@ public class Frame {
     }
 
     private JLabel imageLabel(){
-        imageLabel = new JLabel(new ImageIcon("C:\\Users\\matni\\IdeaProjects\\JAVAWROtest\\src\\main\\java\\pl\\sda\\rafal\\zientara\\tdd\\pdfExercise\\fileOperations\\data\\guugle.png"));
-        imageLabel.setBounds(100,40,500,20);
+        imageLabel = new JLabel(new ImageIcon("C:\\Users\\matni\\IdeaProjects\\JAVAWROtest\\src\\main\\resources\\guugle.png"));
+        imageLabel.setBounds(100,30,500,40);
         return imageLabel;
 
     }
