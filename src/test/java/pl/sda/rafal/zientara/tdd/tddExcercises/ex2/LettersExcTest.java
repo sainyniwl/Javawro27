@@ -8,51 +8,51 @@ class LettersExcTest {
 
     @Test
     void testing1(){
-        assertEquals(LettersExc.firtsLetterToUpperCase("mateusz niedbal"),"Mateusz Niedbal");
+        assertEquals(LettersExc.firstLetterToUpperCase("mateusz niedbal"),"Mateusz Niedbal");
     }
     @Test
     void testing2(){
-        assertEquals(LettersExc.firtsLetterToUpperCase("kedzierzyn - kozle"),"Kedzierzyn - Kozle");
+        assertEquals(LettersExc.firstLetterToUpperCase("kedzierzyn - kozle"),"Kedzierzyn - Kozle");
     }
     @Test
     void testing3(){
-        assertEquals(LettersExc.firtsLetterToUpperCase("ala ma kota, ktory zdechl"),"Ala Ma Kota, Ktory Zdechl");
+        assertEquals(LettersExc.firstLetterToUpperCase("ala ma kota, ktory zdechl"),"Ala Ma Kota, Ktory Zdechl");
     }
     @Test
     void testing4(){
-        assertEquals(LettersExc.firtsLetterToUpperCase("szklarska poreba"),"Szklarska Poreba");
+        assertEquals(LettersExc.firstLetterToUpperCase("szklarska poreba"),"Szklarska Poreba");
     }
     @Test
     void testing5(){
-        assertEquals(LettersExc.firtsLetterToUpperCase(null),null);
+        assertEquals(LettersExc.firstLetterToUpperCase(null),null);
     }
     @Test
     void testing6(){
-        assertEquals(LettersExc.firtsLetterToUpperCase(""),"");
+        assertEquals(LettersExc.firstLetterToUpperCase(""),"");
     }
     @Test
     void testing7(){
-        assertEquals(LettersExc.firtsLetterToUpperCase(" , ")," , ");
+        assertEquals(LettersExc.firstLetterToUpperCase(" , ")," , ");
     }
     @Test
     void testing8(){
-        assertEquals(LettersExc.firtsLetterToUpperCase("Zenek dąbrowski-nowacki"),"Zenek Dąbrowski-Nowacki");
+        assertEquals(LettersExc.firstLetterToUpperCase("Zenek dąbrowski-nowacki"),"Zenek Dąbrowski-Nowacki");
     }
     @Test
     void testing9(){
-        assertEquals(LettersExc.firtsLetterToUpperCase("banan"),"Banan");
+        assertEquals(LettersExc.firstLetterToUpperCase("banan"),"Banan");
     }
     @Test
     void testing10(){
-        assertEquals(LettersExc.firtsLetterToUpperCase("MARCIN SZWED"),"MARCIN SZWED");
+        assertEquals(LettersExc.firstLetterToUpperCase("MARCIN SZWED"),"MARCIN SZWED");
     }
     @Test
     void testing11(){
-        assertEquals(LettersExc.firtsLetterToUpperCase("kędzierzyn koźle"),"Kędzierzyn Koźle");
+        assertEquals(LettersExc.firstLetterToUpperCase("kędzierzyn koźle"),"Kędzierzyn Koźle");
     }
     @Test
     void testing12(){
-        assertEquals(LettersExc.firtsLetterToUpperCase("nOWA szZKOla"),"NOWA SzZKOla");
+        assertEquals(LettersExc.firstLetterToUpperCase("nOWA szZKOla"),"NOWA SzZKOla");
     }
 
 
