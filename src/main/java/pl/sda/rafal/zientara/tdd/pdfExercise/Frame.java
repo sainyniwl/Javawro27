@@ -82,14 +82,10 @@ public class Frame {
     }
 
     private JTextField inputRegexTextField(){
-
         inputRegexTextField = new JTextField();
         inputRegexTextField.setText("");
         inputRegexTextField.setBounds(100,70,500,20);
-
         inputRegexTextField.addKeyListener(new KeyListener() {
-
-
             @Override
             public void keyTyped(KeyEvent keyEvent) {
                 if (keyEvent.getKeyChar() == 10) {
@@ -99,15 +95,11 @@ public class Frame {
                     newSession.getSessionSearchesList().add(new Search(regex,searchEngine.isSearchedItemInResource(regex),searchEngine.getTitlesList().size()));
                 }
             }
-
             @Override
             public void keyPressed(KeyEvent keyEvent) {
-
             }
-
             @Override
             public void keyReleased(KeyEvent keyEvent) {
-
             }
         });
 
@@ -138,7 +130,6 @@ public class Frame {
         historyButton = new JButton();
         historyButton.setBounds(420,100,180,20);
         historyButton.setFont(new Font("Arial", Font.PLAIN, 15));
-
         historyButton.setText("View session history");
         historyButton.addActionListener(new ActionListener() {
             @Override
@@ -151,21 +142,16 @@ public class Frame {
                 }
             }
         });
-
         return historyButton;
     }
 
     private JScrollPane resultLabel(){
-
         resultLabel = new JLabel();
-
         resultLabel.setBounds(20,140,660,470);
         resultLabel.setVerticalAlignment(1);
         resultLabel.setText("");
         JScrollPane scroller = new JScrollPane(resultLabel);
-
         scroller.setBounds(20,140,660,500);
-
         return scroller;
     }
 
@@ -173,7 +159,6 @@ public class Frame {
         imageLabel = new JLabel(new ImageIcon("C:\\Users\\matni\\IdeaProjects\\JAVAWROtest\\src\\main\\resources\\guugle.png"));
         imageLabel.setBounds(100,30,500,40);
         return imageLabel;
-
     }
 
 
