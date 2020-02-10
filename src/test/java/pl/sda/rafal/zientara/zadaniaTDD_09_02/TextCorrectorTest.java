@@ -28,10 +28,25 @@ class TextCorrectorTest {
     }
 
     @Test
-    public void firstLetterToUpperCaseStringWithDashAndWhitespaces() {
-        String text = "kędzierzyn - koźle";
+    public void firstLetterToUpperCaseIncludeTextSeparator() {
+        String text = "ala ma kota, banan and AnanaS";
         String result = textCorrector.wordToUpperCase(text);
-        assertEquals("Kędzierzyn - Koźle", result);
+        assertEquals("Ala Ma Kota, Banan And Ananas", result);
+    }
+
+    @Test
+    public void allVariantsInOneSentences() {
+        String text = "ala ma kota, Zenek Dąbrowkski-Nowakowski, walaszko-nowicka, szklarska poreba";
+        String result = textCorrector.wordToUpperCase(text);
+        assertEquals("Ala Ma Kota, Zenek Dąbrowkski - Nowakowski, Walaszko - Nowicka, Szklarska Poreba", result);
+    }
+
+
+    @Test
+    public void firstLetterToUpperCaseStringAllLetterWithUpperCase() {
+        String text = "ALA MA KOTA";
+        String result = textCorrector.wordToUpperCase(text);
+        assertEquals("Ala Ma Kota", result);
     }
 
     @Test
