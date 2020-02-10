@@ -3,9 +3,6 @@ package pl.sda.rafal.zientara.tdd.tddExcercises.ex1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.text.DecimalFormat;
-import java.text.Format;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Point2DTest {
@@ -16,7 +13,6 @@ class Point2DTest {
 
     @Test
     void distanceMeasurementFromPointZeroTest() {
-        DecimalFormat dF = new DecimalFormat("#0.00");
 
         assertEquals((int) new Point2D(0, 50).getDistanceFromCenter(), 50);
         assertEquals((int) new Point2D(50, 0).getDistanceFromCenter(), 50);
