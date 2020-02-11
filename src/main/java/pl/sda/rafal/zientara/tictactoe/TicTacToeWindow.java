@@ -27,7 +27,7 @@ public class TicTacToeWindow {
             int col = i % TicTacToe.BOARD_SIZE;
             int row = i / TicTacToe.BOARD_SIZE;
             String text = Integer.toString(i);
-            JButton button = new JButton(text);
+            JButton button = new JButton("");
             button.setBounds(50, 50, 200, 100);
             button.addActionListener(new ActionListener() {
                 @Override
