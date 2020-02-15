@@ -92,4 +92,17 @@ public class CalcController {
         return new BigDecimal(text.replace(",", "."));
     }
 
+    @FXML
+    private void handleClearPressed(){
+        screen.clear();
+    }
+
+    @FXML
+    private void handleCommaPressed() {
+        String text = screen.getText();
+        if (!text.contains(".")) {
+            screen.appendText(".");
+        }
+    }
+
 }
