@@ -16,7 +16,7 @@
             <Font name="System Bold" size="18.0" fx:id="x1" />
           </font>
         </Button>
-        <Button font="$x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="C" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        <Button font="$x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleClearPressed" text="C" GridPane.columnIndex="3" GridPane.rowIndex="0" />
         <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlerNumberPressed" text="7" GridPane.columnIndex="0" GridPane.rowIndex="1" />
         <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlerNumberPressed" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlerNumberPressed" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
@@ -30,7 +30,7 @@
         <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlerNumberPressed" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
         <Button font="$x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleMultipyPressed" text="*" GridPane.columnIndex="3" GridPane.rowIndex="3" />
         <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlerNumberPressed" text="0" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleCommaPressed" text="." GridPane.columnIndex="1" GridPane.rowIndex="4" />
         <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleResultPressed" text="=" GridPane.columnIndex="2" GridPane.rowIndex="4" />
         <Button font="$x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDividePressed" text="/" GridPane.columnIndex="3" GridPane.rowIndex="4" />
       </children>

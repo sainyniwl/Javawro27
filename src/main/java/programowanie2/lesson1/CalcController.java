@@ -21,6 +21,17 @@ public class CalcController {
     private BigDecimal firstNumber;
 
     @FXML
+    private void handleClearPressed(){
+        screen.clear();
+    }
+
+    @FXML
+    private void handleCommaPressed(){
+        if (!screen.getText().contains(","))
+            screen.appendText(",");
+    }
+
+    @FXML
     private void handlePlusPressed(ActionEvent event){
         changeOperation(Operation.PLUS);
     }
