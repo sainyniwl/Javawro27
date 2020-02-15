@@ -10,4 +10,8 @@ public class MainPoint2D {
         System.out.println(point2D.toString());
 
     }
+
+
+
+
 }
