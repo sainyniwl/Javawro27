@@ -46,6 +46,10 @@ public class Hangman {
         return hp;
     }
 
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
     public boolean isPuzzleSolved() {
         return getOutput().equals(puzzle);
     }
