@@ -11,7 +11,7 @@
     <GridPane layoutX="14.0" layoutY="115.0" prefHeight="371.0" prefWidth="372.0">
       <children>
         <Button minHeight="-1.0" minWidth="-1.0" mnemonicParsing="false" prefHeight="121.0" prefWidth="151.0" text="AC" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-        <Button mnemonicParsing="false" prefHeight="127.0" prefWidth="121.0" text="C" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        <Button mnemonicParsing="false" onAction="#handleClearPressed" prefHeight="127.0" prefWidth="121.0" text="C" GridPane.columnIndex="3" GridPane.rowIndex="0" />
         <Button mnemonicParsing="false" onAction="#handleNumberPressed" prefHeight="101.0" prefWidth="123.0" text="7" GridPane.columnIndex="0" GridPane.rowIndex="1" />
         <Button mnemonicParsing="false" onAction="#handleNumberPressed" prefHeight="101.0" prefWidth="114.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Button mnemonicParsing="false" onAction="#handleNumberPressed" prefHeight="116.0" prefWidth="107.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
@@ -25,7 +25,7 @@
         <Button mnemonicParsing="false" onAction="#handleNumberPressed" prefHeight="74.0" prefWidth="115.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
         <Button mnemonicParsing="false" onAction="#handleMultiplyPressed" prefHeight="75.0" prefWidth="122.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="3" />
         <Button mnemonicParsing="false" onAction="#handleNumberPressed" prefHeight="75.0" prefWidth="107.0" text="0" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="139.0" text="," GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Button mnemonicParsing="false" onAction="#handleComaPressed" prefHeight="93.0" prefWidth="139.0" text="," GridPane.columnIndex="1" GridPane.rowIndex="4" />
         <Button minWidth="35.0" mnemonicParsing="false" onAction="#handleResultPressed" prefHeight="90.0" prefWidth="107.0" text="=" GridPane.columnIndex="2" GridPane.rowIndex="4" />
         <Button mnemonicParsing="false" onAction="#handleDividePressed" prefHeight="75.0" prefWidth="112.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="4" />
       </children>

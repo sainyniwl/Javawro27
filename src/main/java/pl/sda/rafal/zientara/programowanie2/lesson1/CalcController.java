@@ -52,10 +52,23 @@ public class CalcController {
     }
 
     @FXML
+    public void handleClearPressed() {
+        screen.clear();
+    }
+
+    @FXML
+    public void handleComaPressed() {
+        String text = screen.getText();
+        if (!text.contains(".")) {
+            screen.appendText(".");
+        }
+    }
+
+    @FXML
     public void handleResultPressed() {
         BigDecimal secondNumber = getNumberFromScreen();
         BigDecimal result = getResult(secondNumber);
-        screen.setText(String.format("%f",result));
+        screen.setText(String.format("%f", result));
     }
 
     private BigDecimal getResult(BigDecimal secondNumber) {
@@ -91,7 +104,7 @@ public class CalcController {
 
     private BigDecimal getNumberFromScreen() {
         String text = screen.getText();
-        return new BigDecimal(text.replace(",","."));
+        return new BigDecimal(text.replace(",", "."));
     }
 
 }
