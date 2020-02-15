@@ -7,6 +7,7 @@ public class Hangman {
     private String puzzle;
     private Set<Character> guessedLetters = new LinkedHashSet<>();
     private int hp;
+    private String message;
 
     public void setPuzzle(String puzzle) {
         this.puzzle = puzzle;
@@ -31,17 +32,26 @@ public class Hangman {
         return output.toString();
     }
 
+    public String getPuzzle() {
+        return puzzle;
+    }
+
     public void guessLetter(char c) {
         if (hp != 0) {
             char smallChar = Character.toLowerCase(c);
             guessedLetters.add(smallChar);
             boolean isCorrect = puzzle.toLowerCase()
                     .contains(Character.toString(smallChar));
-
+            message = "Congratulations";
             if (!isCorrect) {
+                message = "Bad luck";
                 hp--;
             }
         }
+    }
+
+    public String getMessage() {
+        return message;
     }
 
     public int getHp() {
@@ -69,4 +79,6 @@ public class Hangman {
             }
         }
     }
+
+
 }
