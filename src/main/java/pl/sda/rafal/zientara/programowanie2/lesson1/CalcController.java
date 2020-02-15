@@ -29,6 +29,14 @@ public class CalcController {
     }
 
     @FXML
+    public void handleComaPressed(){
+        String text = screen.getText();
+        if(!text.contains(".")) {
+            screen.appendText(".");
+        }
+    }
+
+    @FXML
     public void handlePlusPressed(){
         changeOperation(Operation.PLUS);
     }
@@ -47,6 +55,12 @@ public class CalcController {
     public void handleDividePressed(){
         changeOperation(Operation.DIVIDE);
     }
+
+    @FXML
+    public void handleClearPressed() {
+        screen.clear();
+    }
+
 
     @FXML
     public void handleResultPressed(){
