@@ -1,6 +1,7 @@
-package pl.sda.rafal.zientara;
+package pl.sda.rafal.zientara.homework1;
 
 import org.junit.jupiter.api.Test;
+import pl.sda.rafal.zientara.homework1.Point2D;
 
 import static org.junit.jupiter.api.Assertions.*;
 
