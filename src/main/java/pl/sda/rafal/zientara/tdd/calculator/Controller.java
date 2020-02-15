@@ -55,6 +55,19 @@ public class Controller {
     }
 
     @FXML
+    public void handleClearPressed() {
+        screen.clear();
+    }
+
+    @FXML
+    public void handleComaPressed() {
+        String text = screen.getText();
+        if(!text.contains(".")) {
+            screen.appendText(".");
+        }
+    }
+
+    @FXML
     private void handleResultPressed() {
         BigDecimal secondNumber = getNumberFromScreen();
         BigDecimal result = getResult(secondNumber);
