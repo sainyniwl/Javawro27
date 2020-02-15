@@ -6,6 +6,7 @@ public class AverageMain {
         int[] input = new int[]{2, 3};
         float avg = Average.count(input);
 
+        //commit for no reason
         System.out.println(String.format("%.2f", avg));
     }
 }
