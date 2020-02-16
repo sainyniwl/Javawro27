@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="programowanie2.lesson1.HangmanController">
+  <children>
+    <TextField fx:id="input" layoutX="370.0" layoutY="84.0" onAction="#handeConfirm" prefHeight="42.0" prefWidth="202.0" />
+    <Button id="ok" fx:id="submitButton" layoutX="370.0" layoutY="147.0" mnemonicParsing="false" onAction="#handeConfirm" prefHeight="35.0" prefWidth="202.0" text="OK!" />
+    <Label fx:id="passwordLabel" alignment="CENTER" layoutX="233.0" layoutY="294.0" prefHeight="85.0" prefWidth="339.0" text="... .. ...." textAlignment="CENTER" underline="false">
+      <font>
+        <Font name="Arial Black" size="18.0" />
+      </font>
+    </Label>
+    <Line fx:id="line1" endX="-20.0" endY="-8.0" layoutX="123.0" layoutY="270.0" startX="-84.0" startY="55.0" />
+    <Line fx:id="line2" endX="-30.0" endY="-20.0" layoutX="133.0" layoutY="280.0" startX="36.0" startY="43.0" />
+    <Line fx:id="line3" endX="-97.0" endY="-119.0" layoutX="200.0" layoutY="200.0" startX="-97.0" startY="61.0" />
+    <Line fx:id="line4" endX="55.0" endY="-17.0" layoutX="197.0" layoutY="99.0" startX="-93.0" startY="-18.0" />
+    <Line fx:id="line5" endX="-32.0" endY="-18.0" layoutX="198.0" layoutY="99.0" startX="-94.0" startY="39.0" />
+    <Line fx:id="line6" endX="-53.0" endY="-33.0" layoutX="305.0" layoutY="115.0" startX="-53.0" startY="12.0" />
+    <Group id="Group" fx:id="human" layoutX="219.0" layoutY="130.0" scaleX="1.0" scaleY="1.0">
+      <children>
+        <Circle fill="WHITE" layoutX="35.0" layoutY="17.0" radius="16.646453857421875" stroke="BLACK" strokeType="INSIDE" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="80.0" layoutX="26.0" layoutY="35.0" stroke="BLACK" strokeType="INSIDE" width="17.29290771484375" />
+        <Line endX="-20.0" endY="-8.0" layoutX="47.0" layoutY="44.0" startX="-46.0" startY="21.0" />
+        <Line endX="-15.0" endY="-18.0" layoutX="57.0" layoutY="54.0" startX="9.0" startY="11.0" />
+        <Line endX="-39.0" endY="102.0" layoutX="57.0" layoutY="54.0" startX="-29.0" startY="59.0" />
+        <Line endX="-32.0" endY="-18.0" layoutX="74.0" layoutY="131.0" startX="-16.0" startY="26.0" />
+      </children>
+    </Group>
+    <Button layoutX="370.0" layoutY="196.0" mnemonicParsing="false" onAction="#resetGame" prefHeight="31.0" prefWidth="202.0" text="RESET" />
+  </children>
+</AnchorPane>
