@@ -6,7 +6,7 @@ public class CowFarm<C extends Cow> extends OldMcDonaldFarm<C> {
 
     public int produceMilk() {
         int milk = 0;
-        for (Cow cow : animals) {
+        for (C cow : animals) {
             milk += cow.getMilk();
         }
         return milk;

@@ -24,7 +24,7 @@ public class OldMcDonaldFarm<T extends Animal> {
 
     public void printAllInfo() {
         System.out.println("Wszystkie zwierzeta");
-        for (Animal temp : animals) {
+        for (T temp : animals) {
             temp.printInfo();
         }
         System.out.println();
@@ -33,7 +33,7 @@ public class OldMcDonaldFarm<T extends Animal> {
     public void printBirdsInfo() {
         System.out.println("Ptaki na farmie:");
         //Wydrukuj informacje o zwierzakach do konsoli - ale tylko ptakach
-        for (Animal temp : animals) {
+        for (T temp : animals) {
             if (temp instanceof BirdAnimal)
                 temp.printInfo();
         }
@@ -43,7 +43,7 @@ public class OldMcDonaldFarm<T extends Animal> {
     public void printMammalsInfo() {
         System.out.println("Ssaki na farmie:");
         //Wydrukuj informacje o zwierzakach do konsoli - ale tylko ssakach
-        for (Animal temp : animals) {
+        for (T temp : animals) {
             if (temp instanceof MammalAnimal)
                 temp.printInfo();
         }
