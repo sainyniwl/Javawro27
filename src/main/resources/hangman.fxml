@@ -12,13 +12,13 @@
 
 <AnchorPane fx:controller="pl.sda.rafal.zientara.tdd.hangman.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="submitButton" layoutX="508.0" layoutY="218.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="245.0" text="OK" />
+      <Button fx:id="submitButton" onAction="#handleConfirm" layoutX="508.0" layoutY="218.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="245.0" text="OK" />
       <Label fx:id="passwordLabel" alignment="CENTER" layoutX="343.0" layoutY="347.0" prefHeight="189.0" prefWidth="407.0" text="Ala ma kota" textAlignment="CENTER">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <TextField fx:id="input" layoutX="508.0" layoutY="123.0" prefHeight="65.0" prefWidth="245.0" />
+      <TextField fx:id="input" onAction="#handleConfirm" layoutX="508.0" layoutY="123.0" prefHeight="65.0" prefWidth="245.0" />
       <Line fx:id="line1" endX="-5.0" endY="-145.0" layoutX="144.0" layoutY="542.0" startX="-100.0" />
       <Line fx:id="line2" endX="-139.29290771484375" endY="-126.70709228515625" layoutX="279.0" layoutY="523.0" startX="-55.0" startY="12.0" />
       <Line fx:id="line3" endX="0.70709228515625" endY="-64.0" layoutX="139.0" layoutY="123.0" startX="0.70709228515625" startY="273.29290771484375" />
@@ -35,6 +35,6 @@
             <Line endX="-9.0" endY="-26.0" layoutX="74.0" layoutY="150.0" startX="7.0" startY="20.0" />
          </children>
       </Group>
-      <Button fx:id="reset" layoutX="508.0" layoutY="14.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="245.0" text="RESET" />
+      <Button fx:id="reset" onAction="#resetGame" layoutX="508.0" layoutY="14.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="245.0" text="RESET" />
    </children>
 </AnchorPane>
