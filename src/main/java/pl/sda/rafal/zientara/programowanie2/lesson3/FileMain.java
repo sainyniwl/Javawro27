@@ -1,6 +1,9 @@
 package pl.sda.rafal.zientara.programowanie2.lesson3;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,6 +34,7 @@ public class FileMain {
             System.out.println("Duplicates " + duplicates);
             deleteDuplicates(duplicates);
 
+            //todo inne usuwanie z listy
 
         }
 //print filtered files
@@ -52,7 +56,6 @@ public class FileMain {
                 System.out.println("Cant remove");
             }
         }
-
     }
 
     private static List<File> getDuplicates(File png, List<File> pngFiles) {
@@ -72,10 +75,41 @@ public class FileMain {
         }
         if (png.length() == possibleDuplicates.length()) {
             //todo porownaj pliki d
-            return true;
+            return compareBybBites(png, possibleDuplicates);
         } else {
             return false;
         }
+    }
+
+    private static boolean compareBybBites(File png, File possibleDuplicates) {
+        try {
+            FileReader reader = new FileReader(png);
+            FileReader reader2 = new FileReader(possibleDuplicates);
+            int read1;
+            int read2;
+            do {
+                read1 = reader.read();
+                read2 = reader2.read();
+                if (read1 != read2) {
+                    System.out.println("Different! " + read1 + "!=" + read2);
+                    reader.close();
+                    reader2.close();
+                    return false;
+                }
+            } while (read1 != -1 && read2 != -1);
+
+            reader.close();
+            reader2.close();
+            return true;
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File does not exist");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Can't read");
+            e.printStackTrace();
+        }
+        return false;
     }
 
     private static void addSubFiles(File file, List<File> fileList) {
