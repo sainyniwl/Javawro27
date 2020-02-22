@@ -1,4 +1,4 @@
-package pl.sda.rafal.zientara.tdd.programowanie2.lesson2.homework.farm.animals;
+package pl.sda.rafal.zientara.tdd.programowanie2.lesson1.homework.farm.animals;
 
 /**
  * TODO 2. zaimplementuj klasy - kazdy w nowym pliku. pomysl jaka powinna byc klasa bazowa

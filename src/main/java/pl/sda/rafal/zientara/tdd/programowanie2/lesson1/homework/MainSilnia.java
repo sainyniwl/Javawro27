@@ -1,4 +1,4 @@
-package pl.sda.rafal.zientara.tdd.programowanie2.lesson2.homework;
+package pl.sda.rafal.zientara.tdd.programowanie2.lesson1.homework;
 
 public class MainSilnia {
 

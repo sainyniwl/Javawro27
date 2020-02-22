@@ -1,6 +1,6 @@
-package pl.sda.rafal.zientara.tdd.programowanie2.lesson2.homework.farm;
+package pl.sda.rafal.zientara.tdd.programowanie2.lesson1.homework.farm;
 
-import pl.sda.rafal.zientara.tdd.programowanie2.lesson2.homework.farm.animals.Animal;
+import pl.sda.rafal.zientara.tdd.programowanie2.lesson1.homework.farm.animals.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class OldMcDonaldFarm<T extends Animal> {
 
     public void printAllInfo() {
         System.out.println("Wszystkie zwierzeta");
-        for (Animal temp : animals) {
+        for (T temp : animals) {
             temp.printInfo();
         }
         System.out.println();

@@ -1,4 +1,4 @@
-package pl.sda.rafal.zientara.tdd.programowanie2.lesson2.homework.farm.animals;
+package pl.sda.rafal.zientara.tdd.programowanie2.lesson1.homework.farm.animals;
 
 public class Cow extends MammalAnimal {
 

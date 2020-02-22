@@ -1,5 +1,5 @@
-package pl.sda.rafal.zientara.tdd.programowanie2.lesson2.homework.farm;
-import pl.sda.rafal.zientara.tdd.programowanie2.lesson2.homework.farm.animals.Animal;
+package pl.sda.rafal.zientara.tdd.programowanie2.lesson1.homework.farm;
+import pl.sda.rafal.zientara.tdd.programowanie2.lesson1.homework.farm.animals.Animal;
 
 public class MainFarm {
 
