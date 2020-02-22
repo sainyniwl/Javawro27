@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="507.0">
+          <children>
+            <Label text="Fill Color">
+              <font>
+                <Font size="15.0" fx:id="x2" />
+              </font>
+            </Label>
+            <ColorPicker fx:id="fillColorPicker" prefHeight="32.0" prefWidth="94.0" />
+            <Label font="$x2" text="Stroke Color" />
+            <ColorPicker fx:id="strokeColorPicker" prefHeight="32.0" prefWidth="94.0" />
+          </children>
+        </HBox>
+      </bottom>
+      <center>
+        <Canvas fx:id="canvas" blendMode="MULTIPLY" height="400.0" width="700.0" />
+      </center>
+      <left>
+        <VBox alignment="CENTER" prefHeight="360.0" prefWidth="100.0">
+          <children>
+            <Button fx:id="lineTool" mnemonicParsing="false" prefWidth="94.0" text="Line">
+              <font>
+                <Font size="18.0" fx:id="x1" />
+              </font>
+            </Button>
+            <Button fx:id="recTool" font="$x1" mnemonicParsing="false" prefWidth="94.0" text="Rect" />
+            <Button fx:id="triangleTool" font="$x1" mnemonicParsing="false" text="Triangle" />
+            <Button fx:id="circleTool" font="$x1" mnemonicParsing="false" prefWidth="94.0" text="Circle" />
+            <Button fx:id="elipseTool" font="$x1" mnemonicParsing="false" prefWidth="94.0" text="Elipse" />
+            <Button fx:id="starTool" font="$x1" mnemonicParsing="false" prefWidth="94.0" text="Star" />
+          </children>
+        </VBox>
+      </left>
+      <top>
+        <HBox alignment="TOP_RIGHT" prefHeight="40.0" prefWidth="600.0">
+          <children>
+            <Button alignment="BOTTOM_RIGHT" contentDisplay="BOTTOM" font="$x2" mnemonicParsing="false" prefHeight="32.0" prefWidth="61.0" text="Clear" textAlignment="RIGHT" textOverrun="CLIP" />
+            <Button alignment="BOTTOM_RIGHT" contentDisplay="BOTTOM" font="$x2" mnemonicParsing="false" prefHeight="32.0" prefWidth="60.0001220703125" text="Load" textAlignment="RIGHT" textOverrun="CLIP" />
+            <Button alignment="BOTTOM_RIGHT" contentDisplay="BOTTOM" font="$x2" mnemonicParsing="false" prefHeight="32.0" prefWidth="60.0" text="Save" textAlignment="RIGHT" textOverrun="CLIP" />
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>
