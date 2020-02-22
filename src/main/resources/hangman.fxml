@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-background-color 0xccedffff?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="pl.sda.rafal.zientara.programowanie2.lesson1.HangmanController">
+<!--  <icons>-->
+<!--    <Image url="Hangman.png"/>-->
+<!--  </icons>-->
+  <children>
+    <TextField id="textField" fx:id="input" layoutX="330.0" layoutY="73.0" onAction="#submitGuess" prefHeight="43.0" prefWidth="226.0" />
+    <Button id="ok" fx:id="submitButton" layoutX="373.0" layoutY="135.0" mnemonicParsing="false" onAction="#submitGuess" prefHeight="31.0" prefWidth="141.0" text="OK" />
+    <Label id="textLabel" fx:id="passwordLabel" alignment="CENTER" layoutX="235.0" layoutY="271.0" prefHeight="85.0" prefWidth="324.29290771484375" text="... .. ....">
+      <font>
+        <Font name="Comic Sans MS" size="25.0" />
+      </font>
+    </Label>
+    <Line fx:id="line1" endX="-45.0" endY="19.0" layoutX="124.0" layoutY="265.0" startX="-80.0" startY="60.0" />
+    <Line fx:id="line2" endX="-66.0" endY="39.0" layoutX="180.0" layoutY="283.0" startX="-100.0" />
+    <Line fx:id="line3" endX="-103.0" endY="-203.0" layoutX="180.0" layoutY="284.0" startX="-100.0" />
+    <Line fx:id="line4" endX="24.0" endY="0.0" layoutX="179.0" layoutY="81.0" startX="-100.0" />
+    <Line fx:id="line5" endX="-100.0" endY="53.0" layoutX="300.0" layoutY="81.0" startX="-100.0" />
+    <Line fx:id="line6" endX="-45.0" endY="-1.0" layoutX="179.0" layoutY="82.0" startX="-101.0" startY="39.0" />
+    <Group id="Group" fx:id="human" layoutX="161.0" layoutY="128.0">
+      <children>
+        <Circle fill="RED" layoutX="39.0" layoutY="23.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="54.0" layoutX="24.0" layoutY="45.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+        <Line endX="100.0" layoutX="-76.0" layoutY="55.0" startX="77.0" startY="21.0" />
+        <Line endX="120.0" endY="-9.0" layoutX="-66.0" layoutY="65.0" startX="139.0" startY="9.0" />
+        <Line endX="-61.0" endY="-21.0" layoutX="96.0" layoutY="121.0" startX="-69.0" startY="6.0" />
+        <Line endX="-61.0" endY="-31.0" layoutX="106.0" layoutY="131.0" startX="-54.0" startY="-5.0" />
+      </children>
+    </Group>
+    <Button fx:id="restart" layoutX="530.0" layoutY="14.0" mnemonicParsing="false" onAction="#gameReset" text="Restart" />
+  </children>
+</AnchorPane>
