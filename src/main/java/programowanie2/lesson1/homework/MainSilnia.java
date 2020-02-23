@@ -30,7 +30,12 @@ public class MainSilnia {
     }
 
     private static int silnia(int liczba) {
-        //TODO 1. Zaimplementuj funkcjê silnia
-        return 0;
+        int result = 1;
+        int counter = 1;
+        while(counter <= liczba){
+            result = result * counter;
+            counter++;
+        }
+      return result;
     }
 }
