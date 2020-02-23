@@ -1,4 +1,4 @@
-package pl.sda.rafal.zientara.tdd.File;
+package pl.sda.rafal.zientara.tdd.file;
 
 import java.io.File;
 

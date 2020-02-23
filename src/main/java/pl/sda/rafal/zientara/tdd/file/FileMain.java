@@ -1,6 +1,4 @@
-package pl.sda.rafal.zientara.tdd.File;
-
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+package pl.sda.rafal.zientara.tdd.file;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -72,13 +70,13 @@ public class FileMain {
 
         if (png.length() == possibleDuplicate.length()) {
             //TODO porównaj pliki bajt po bajcie
-            return comapreByBytes(png, possibleDuplicate);
+            return compareByBytes(png, possibleDuplicate);
         } else {
             return false;
         }
     }
 
-    private static boolean comapreByBytes(File png, File possibleDuplicate) {
+    private static boolean compareByBytes(File png, File possibleDuplicate) {
         try {
             long startTime = System.currentTimeMillis();
             FileReader reader1 = new FileReader(png);

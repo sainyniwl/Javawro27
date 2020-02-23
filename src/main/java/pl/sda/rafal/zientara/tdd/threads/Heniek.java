@@ -1,4 +1,4 @@
-package pl.sda.rafal.zientara.tdd.Threads;
+package pl.sda.rafal.zientara.tdd.threads;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

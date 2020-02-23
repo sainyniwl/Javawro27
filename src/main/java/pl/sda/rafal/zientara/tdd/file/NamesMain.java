@@ -1,4 +1,4 @@
-package pl.sda.rafal.zientara.tdd.File;
+package pl.sda.rafal.zientara.tdd.file;
 
 import java.io.*;
 
@@ -35,12 +35,12 @@ public class NamesMain {
             int maleCount = getNamesWithLetterCount(currentLetter, maleNames);
             int femaleCount = getNamesWithLetterCount(currentLetter, femaleNames);
             if (maleCount > femaleCount) {
-                builder.append("Wiêcej imion mêskich na literê ").append(currentLetter);
+                builder.append("Wiï¿½cej imion mï¿½skich na literï¿½ ").append(currentLetter);
             } else if (maleCount < femaleCount) {
-                builder.append("Wiêcej imion ¿eñskich na literê ").append(currentLetter);
+                builder.append("Wiï¿½cej imion ï¿½eï¿½skich na literï¿½ ").append(currentLetter);
             }
             if (maleCount == femaleCount) {
-                builder.append("Tyle samo imion mêskich i ¿eñskich na literê ").append(currentLetter);
+                builder.append("Tyle samo imion mï¿½skich i ï¿½eï¿½skich na literï¿½ ").append(currentLetter);
             }
             builder.append(System.lineSeparator());
         }
