@@ -65,7 +65,7 @@ public class FileMain {
         return duplicates;
     }
 
-    private static boolean isDuplicate(File png, File possibleDuplicate) {
+    public static boolean isDuplicate(File png, File possibleDuplicate) {
         //C:\DATA\data-wyszukiwanie plikow\subfolder3-editpng\inna nazwa xD.png
         //C:\DATA\data-wyszukiwanie plikow\subfolder3-editpng\inna nazwa xD.png
         //to jestem ja!
@@ -79,6 +79,36 @@ public class FileMain {
         } else {
             return false;
         }
+    }
+
+    private static boolean compareByBytes(File png, File possibleDuplicate) {
+        try {
+            FileReader reader1 = new FileReader(png);
+            FileReader reader2 = new FileReader(possibleDuplicate);
+
+            int read1;
+            int read2;
+            do {
+                read1 = reader1.read();
+                read2 = reader2.read();
+                if (read1 != read2) {
+                    System.out.println("Inne " + read1 + " !=  " + read2);
+                    reader1.close();
+                    reader2.close();
+                    return false;
+                }
+            } while (read1 != -1 && read2 != 1);
+            reader1.close();
+            reader2.close();
+            return true;
+        } catch (FileNotFoundException e) {
+            System.out.println("Nie ma takiego pliku");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Błąd odczytu");
+            e.printStackTrace();
+        }
+       return false;
     }
 
     private static void printFilteredFiles(List<File> allFiles) {
