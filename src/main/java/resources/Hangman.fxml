@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="pl.sda.rafal.zientara.tdd.hangman.HangmanController">
+  <children>
+    <TextField fx:id="Input" layoutX="362.0" layoutY="68.0" prefWidth="200.0" />
+    <Button fx:id="submitButton" layoutX="362.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleConfirm" prefWidth="200.0" text="ok" />
+    <Label fx:id="Label" alignment="CENTER" contentDisplay="CENTER" layoutX="362.0" layoutY="180.0" prefHeight="112.0" prefWidth="201.0" text="Label" />
+    <Line fx:id="line1" endX="34.0" endY="76.0" layoutX="128.0" layoutY="266.0" startX="-20.0" startY="-41.0" />
+    <Line fx:id="line2" endX="-73.16866302490234" endY="-8.283045768737793" layoutX="128.0" layoutY="225.0" rotate="45.0" startX="-36.53519058227539" startY="130.17840576171875" />
+    <Line fx:id="Line3" endX="-28.0" endY="-50.0" layoutX="135.0" layoutY="120.0" startX="-25.0" startY="106.0" />
+    <Line fx:id="Line4" endX="100.0" layoutX="135.0" layoutY="68.0" startX="-27.0" startY="1.0" />
+    <Line fx:id="Line5" endX="-58.0" endY="-111.0" layoutX="225.0" layoutY="180.0" startX="-119.0" startY="-37.0" />
+    <Line fx:id="Line6" endX="-28.0" endY="-87.0" layoutX="262.0" layoutY="190.0" startX="-29.0" startY="-122.0" />
+    <Group id="Group" fx:id="Line7" layoutX="215.0" layoutY="106.0">
+      <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="56.70709228515625" layoutX="17.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="16.76953125" />
+        <Line endX="12.0" endY="-25.0" layoutX="10.0" layoutY="130.0" startX="12.0" startY="16.0" />
+        <Line endX="-16.0" endY="-30.0" layoutX="47.0" layoutY="177.0" startX="-19.0" startY="-74.0" />
+        <Circle fill="DODGERBLUE" layoutX="23.0" layoutY="23.0" radius="22.70709228515625" stroke="BLACK" strokeType="INSIDE" />
+      </children>
+    </Group>
+    <Button layoutX="492.0" layoutY="336.0" mnemonicParsing="false" onAction="#resetGame" text="Reset" />
+  </children>
+</AnchorPane>
