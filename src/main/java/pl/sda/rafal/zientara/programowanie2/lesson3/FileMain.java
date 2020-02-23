@@ -1,5 +1,7 @@
 package pl.sda.rafal.zientara.programowanie2.lesson3;
 
+import pl.sda.rafal.zientara.programowanie2.lesson4.ByteFileComparator;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -69,47 +71,20 @@ public class FileMain {
         return duplicates;
     }
 
-    private static boolean isDuplicates(File png, File possibleDuplicates) {
+    public static boolean isDuplicates(File png, File possibleDuplicates) {
         if (png.getAbsolutePath().equals(possibleDuplicates.getAbsolutePath())) {
             return false;
         }
         if (png.length() == possibleDuplicates.length()) {
             //todo porownaj pliki d
-            return compareBybBites(png, possibleDuplicates);
+            return compareByBytes(png, possibleDuplicates);
         } else {
             return false;
         }
     }
 
-    private static boolean compareBybBites(File png, File possibleDuplicates) {
-        try {
-            FileReader reader = new FileReader(png);
-            FileReader reader2 = new FileReader(possibleDuplicates);
-            int read1;
-            int read2;
-            do {
-                read1 = reader.read();
-                read2 = reader2.read();
-                if (read1 != read2) {
-                    System.out.println("Different! " + read1 + "!=" + read2);
-                    reader.close();
-                    reader2.close();
-                    return false;
-                }
-            } while (read1 != -1 && read2 != -1);
-
-            reader.close();
-            reader2.close();
-            return true;
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File does not exist");
-            e.printStackTrace();
-        } catch (IOException e) {
-            System.out.println("Can't read");
-            e.printStackTrace();
-        }
-        return false;
+    private static boolean compareByBytes(File png, File possibleDuplicate) {
+        return new ByteFileComparator().compareByBytes(png, possibleDuplicate);
     }
 
     private static void addSubFiles(File file, List<File> fileList) {
