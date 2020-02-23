@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FileMain {
-
+///random
     public static void main(String[] args) {
         File file = new File("/home/pawel/Javawro27/DATA");
         System.out.println(file.getAbsolutePath());
