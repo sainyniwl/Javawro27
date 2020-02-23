@@ -15,6 +15,11 @@ public class FileMain {
         System.out.println(file.getAbsolutePath());
         System.out.println(file.getPath());
         System.out.println("exists:" + file.exists());
+
+//        if(!file.exists()) {
+//            boolean isSuccess = file.createNewFile();
+//        }
+
         System.out.println("parent:" + file.getParent());
 
         System.out.println("isDirectory:" + file.isDirectory());
@@ -72,7 +77,7 @@ public class FileMain {
         return duplicates;
     }
 
-    private static boolean isDuplicate(File png, File possibleDuplicate) {
+    public static boolean isDuplicate(File png, File possibleDuplicate) {
         //C:\DATA\data-wyszukiwanie plikow\subfolder3-editpng\inna nazwa xD.png
         //C:\DATA\data-wyszukiwanie plikow\subfolder3-editpng\inna nazwa xD.png
         //to jestem ja!
@@ -114,6 +119,7 @@ public class FileMain {
                 }
             } while (read1 != -1 && read2 != -1);
 
+            //todo sprawdz jeszcze raz read1 i read2
             reader1.close();
             reader2.close();
 
