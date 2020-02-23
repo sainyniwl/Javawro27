@@ -46,7 +46,7 @@ public class FileMain {
 
     }
 
-    private static boolean isDuplicate(File png, File possibleDuplicate){
+    private static boolean isDuplicate(File png, File possibleDuplicate) {
         //C:\DATA\data-wyszukiwanie plikow\subfolder3-editpng\inna nazwa xD.png
         //C:\DATA\data-wyszukiwanie plikow\subfolder3-editpng\inna nazwa xD.png
         //to jestem ja!
@@ -74,45 +74,58 @@ public class FileMain {
 
     private static void addSubFiles(File file, List<File> allFiles) {
         File[] files = file.listFiles();
-        if(files != null) {
+        if (files != null) {
             System.out.println("===========SUB_FILES============");
             for (File subFiles : files) {
                 System.out.println(subFiles);
-                if(subFiles.isFile()){
+                if (subFiles.isFile()) {
                     allFiles.add(subFiles);
-                }else if(subFiles.isDirectory()){
+                } else if (subFiles.isDirectory()) {
                     addSubFiles(subFiles, allFiles);
                 }
             }
-        }else{
+        } else {
             System.out.println("No sub files for: " + file.getName());
         }
     }
 
-    private static boolean compareByByte(File png, File possibleDuplicate){
-        try{
+    private static boolean compareByByte(File png, File possibleDuplicate) {
+        try {
             FileReader reader1 = new FileReader(png);
             FileReader reader2 = new FileReader(possibleDuplicate);
 
+            char[] buffer1 = new char[1024];
+            char[] buffer2 = new char[1024];
             int read1;
             int read2;
 
             do {
-                read1 = reader1.read();
-                read2 = reader2.read();
-                if (read1 == read2) {
+                read1 = reader1.read(buffer1);
+                read2 = reader2.read(buffer2);
+                if (read1 != read2) {
                     System.out.println("Inne! " + read1 + " != " + read2);
                     reader1.close();
                     reader2.close();
                     return false;
+                } else {
+                    for (int i = 0; i < buffer1.length; i++) {
+                        char c1 = buffer1[i];
+                        char c2 = buffer2[i];
+                        if (c1 == c2) {
+                            System.out.println("Inne! " + read1 + " != " + read2);
+                            reader1.close();
+                            reader2.close();
+                            return false;
+                        }
+                    }
                 }
-            }while(read1 != -1 && read2 != -1);
+            } while (read1 != -1 && read2 != -1);
 
             reader1.close();
             reader2.close();
             return true;
 
-        }catch(FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("Nie ma takiego pliku");
             e.printStackTrace();
         } catch (IOException e) {
