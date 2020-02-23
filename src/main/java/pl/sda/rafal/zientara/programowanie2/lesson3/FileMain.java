@@ -1,9 +1,8 @@
 package pl.sda.rafal.zientara.programowanie2.lesson3;
 
+import pl.sda.rafal.zientara.programowanie2.lesson4.ByteFileComparator;
+
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -86,7 +85,6 @@ public class FileMain {
         }
         //te same rozmiary pliku
         if (png.length() == possibleDuplicate.length()) {
-            //todo porownaj pliki bajt po bajcie
             return compareByBytes(png, possibleDuplicate);
         } else {
             return false;
@@ -94,49 +92,7 @@ public class FileMain {
     }
 
     private static boolean compareByBytes(File png, File possibleDuplicate) {
-        try {
-
-            long startTime = System.currentTimeMillis();
-            FileReader reader1 = new FileReader(png);
-            FileReader reader2 = new FileReader(possibleDuplicate);
-
-            int read1;
-            int read2;
-            do  {
-                read1 = reader1.read();
-                read2 = reader2.read();
-                if (read1 != read2) {
-                    System.out.println("Inne! " + read1 + "!=" + read2);
-                    reader1.close();
-                    reader2.close();
-
-                    long end = System.currentTimeMillis();
-                    long diff = end - startTime;
-                    System.out.println("Nie duplikat! Zmarnowałem [ms] " + diff);
-                    return false;
-                    //plik1:11111111
-                    //plik2:11111101
-                }
-            } while (read1 != -1 && read2 != -1);
-
-            //todo sprawdz jeszcze raz read1 i read2
-            reader1.close();
-            reader2.close();
-
-            long end = System.currentTimeMillis();
-            long diff = end - startTime;
-            System.out.println("Duplikat! Znaleziono po [ms] " + diff);
-
-            return true;
-        } catch (FileNotFoundException e) {
-            System.out.println("Nie ma takiego pliku!");
-            e.printStackTrace();
-        } catch (IOException e) {
-            System.out.println("Błąd odczytu!");
-            e.printStackTrace();
-        }
-
-        return false;
+        return new ByteFileComparator().compareByBytes(png, possibleDuplicate);
     }
 
     private static void printFilteredFiles(List<File> allFiles) {
