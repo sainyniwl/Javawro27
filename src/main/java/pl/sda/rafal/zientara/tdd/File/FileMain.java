@@ -65,7 +65,7 @@ public class FileMain {
         return duplicates;
     }
 
-    private static boolean isDuplicate(File png, File possibleDuplicate) {
+    static boolean isDuplicate(File png, File possibleDuplicate) {
         if (png.getAbsolutePath().equals(possibleDuplicate.getAbsolutePath())) {
             return false;
         }
