@@ -1,5 +1,6 @@
 package pl.sda.rafal.zientara.tdd.expenses;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class MoneyContract {
@@ -13,6 +14,9 @@ public class MoneyContract {
         void initData();
         void onWordChange(String word);
         void onPriceFromChange(double fromPrice);
+        void onPriceToChange(double toPrice);
+        void onFromDateChange(LocalDate fromDate);
+        void onToDateChange(LocalDate toDate);
 
         List<Cost> getLastResult();
     }

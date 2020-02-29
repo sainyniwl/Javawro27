@@ -25,7 +25,8 @@ class MoneyPresenterTest {
     }
 
     @Test
-    public  void initPresenter(){
+    public void initPresenter(){
+        presenter.initData();
         verify(view).refreshList(any());
     }
 
@@ -51,11 +52,34 @@ class MoneyPresenterTest {
     @Test
     public void findCostByNameAndPrice() {
         presenter.onWordChange("zabka");
-        presenter.onPriceFromChange(400.);
+        presenter.onPriceFromChange(500.);
         verify(view, times(2)).refreshList(any());
-
         List<Cost> lastResult = presenter.getLastResult();
         assertEquals(1, lastResult.size());
+    }
+
+    @Test
+    public void filterByToPrice() {
+        presenter.onPriceToChange(15);
+        verify(view, times(1)).refreshList(any());
+        List<Cost> lastResult = presenter.getLastResult();
+        assertEquals(3, lastResult.size());
+    }
+
+    @Test
+    public void filterByFromDate() {
+        presenter.onFromDateChange(LocalDate.of(2020, 1, 20));
+        verify(view, times(1)).refreshList(any());
+        List<Cost> lastResult = presenter.getLastResult();
+        assertEquals(6, lastResult.size());
+    }
+
+    @Test
+    public void filterByToDate() {
+        presenter.onToDateChange(LocalDate.of(2020, 1, 31));
+        verify(view, times(1)).refreshList(any());
+        List<Cost> lastResult = presenter.getLastResult();
+        assertEquals(17, lastResult.size());
     }
 
 }

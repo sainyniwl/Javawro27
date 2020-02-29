@@ -16,7 +16,10 @@ public class MoneyPresenter implements MoneyContract.Presenter {
     private List<Cost> costs = new ArrayList<>();
     private List<Cost> lastResult = new ArrayList<>();
     private double fromPrice;
+    private double toPrice;
     private String word;
+    private LocalDate fromDate;
+    private LocalDate toDate;
 
     public MoneyPresenter(MoneyContract.View view) {
         this.view = view;
@@ -45,7 +48,6 @@ public class MoneyPresenter implements MoneyContract.Presenter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        view.refreshList(costs);
     }
 
     @Override
@@ -79,11 +81,33 @@ public class MoneyPresenter implements MoneyContract.Presenter {
     @Override
     public void onPriceFromChange(double fromPrice) {
         this.fromPrice = fromPrice;
-        refreshResults(fromPrice);
+        refreshAndShow();
+    }
+
+    @Override
+    public void onPriceToChange(double toPrice) {
+        this.toPrice = toPrice;
+        refreshAndShow();
+    }
+
+    @Override
+    public void onFromDateChange(LocalDate fromDate) {
+        this.fromDate = fromDate;
+        refreshAndShow();
+    }
+
+    @Override
+    public void onToDateChange(LocalDate toDate) {
+        this.toDate = toDate;
+        refreshAndShow();
+    }
+
+    private void refreshAndShow() {
+        refreshResults();
         view.refreshList(lastResult);
     }
 
-    private void refreshResults(double fromPrice) {
+    private void refreshResults() {
         Stream<Cost> stream = costs.stream();
         if(word != null) {
             stream = stream.filter(cost -> cost.shopName.contains(word));
@@ -91,11 +115,20 @@ public class MoneyPresenter implements MoneyContract.Presenter {
         if(fromPrice > 0) {
             stream = stream.filter(cost -> cost.price >= fromPrice);
         }
+        if(toPrice > 0) {
+            stream = stream.filter(cost -> cost.price <= toPrice);
+        }
+        if(fromDate != null) {
+            stream = stream.filter(cost -> !cost.date.isBefore(fromDate));
+        }
+        if(toDate != null) {
+            stream = stream.filter(cost -> !cost.date.isAfter(toDate));
+        }
         lastResult = stream.collect(Collectors.toList());
     }
 
     @Override
     public List<Cost> getLastResult() {
-        return null;
+        return lastResult;
     }
 }
