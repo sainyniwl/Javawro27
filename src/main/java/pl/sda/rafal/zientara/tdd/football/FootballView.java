@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-public class FootballView extends JComponent {
+public class FootballView extends JComponent implements FootballContract.View {
 
     private FootballBoard board;
 
@@ -38,9 +38,22 @@ public class FootballView extends JComponent {
         List<Line> lines = board.getLines();
 
         for (Line line : lines) {
+            g.setColor(getLineColor(line.type));
             g.drawLine(line.start.x * cellW, line.start.y * cellH,
                     line.end.x * cellW, line.end.y * cellH);
         }
+    }
+
+    private Color getLineColor(LineType type) {
+        switch (type) {
+            case SIDE:
+                return Color.BLACK;
+            case PLAYER_TOP:
+                return Color.MAGENTA;
+            case PLAYER_BOTTOM:
+                return Color.BLUE;
+        }
+        return Color.RED;
     }
 
     public void setBoard(FootballBoard board) {

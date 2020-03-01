@@ -1,8 +1,8 @@
 package pl.sda.rafal.zientara.tdd.football;
 
 public enum LineType {
-    PLAYER_1,
-    PLAYER_2,
+    PLAYER_TOP,
+    PLAYER_BOTTOM,
     SIDE,
     BLOCKED
 }

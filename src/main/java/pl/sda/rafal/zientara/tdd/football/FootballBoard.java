@@ -103,7 +103,7 @@ public class FootballBoard {
 
     private void initTopSide() {
         for(int i = 0; i < width; i++) {
-            if(i != width/2 && i != (width-1)/2 && i != (width+1)/2) {
+            if(i < width/2 -1 || i > width/2) {
                 int y = 1;
                 int x1 = i;
                 int x2 = i + 1;
@@ -117,7 +117,7 @@ public class FootballBoard {
 
     private void initBottomSide() {
         for(int i = 0; i < width; i++) {
-            if(i != width/2 && i != (width-1)/2 && i != (width+1)/2) {
+            if(i < width/2 -1 || i > width/2) {
                 int y = height-1;
                 int x1 = i;
                 int x2 = i + 1;
@@ -127,5 +127,14 @@ public class FootballBoard {
                 addLine(line);
             }
         }
+    }
+
+    public boolean hasAnyConnection(Point position) {
+        for(Line line : lines) {
+            if(line.start.equals(position) || line.end.equals(position)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
