@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -104,6 +105,7 @@ public class MoneyPresenter implements MoneyContract.Presenter {
 
     private void refreshAndShow() {
         refreshResults();
+        view.refreshSum(getCostSum());
         view.refreshList(lastResult);
     }
 
@@ -130,5 +132,12 @@ public class MoneyPresenter implements MoneyContract.Presenter {
     @Override
     public List<Cost> getLastResult() {
         return lastResult;
+    }
+
+    //TODO IMPLEMENT
+    @Override
+    public double getCostSum() {
+        Optional<Double> reduce = lastResult.stream().map(cost -> cost.price).reduce((acc, value) -> acc + value);
+        return reduce.orElseGet(() -> 0D);
     }
 }

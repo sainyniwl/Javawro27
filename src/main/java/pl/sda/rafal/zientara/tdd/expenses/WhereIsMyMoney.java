@@ -1,5 +1,6 @@
 package pl.sda.rafal.zientara.tdd.expenses;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.time.LocalDate;
@@ -17,6 +18,7 @@ public class WhereIsMyMoney implements MoneyContract.View {
     private JTextField costTo;
     private JTextField costFrom;
     private JList result;
+    private JLabel costSum;
     private MoneyContract.Presenter presenter = new MoneyPresenter(this);
 
     @Override
@@ -27,6 +29,11 @@ public class WhereIsMyMoney implements MoneyContract.View {
         }
 
         result.setModel(list);
+    }
+
+    @Override
+    public void refreshSum(double sum) {
+        costSum.setText(String.valueOf(sum));
     }
 
     public WhereIsMyMoney() {
@@ -107,9 +114,12 @@ public class WhereIsMyMoney implements MoneyContract.View {
         });
         frame.add(costTo);
         result = new JList<>();
-        result.setBounds(PADDING, 350, FIELD_WIDTH, FIELD_HEIGHT*4);
+        result.setBounds(PADDING, 350, FIELD_WIDTH, FIELD_HEIGHT*3);
         frame.add(result);
         frame.setVisible(true);
+        costSum = new JLabel();
+        costSum.setBounds(PADDING, 500, FIELD_HEIGHT, FIELD_HEIGHT);
+        frame.add(costSum);
         presenter.prepareData();
         presenter.initData();
     }

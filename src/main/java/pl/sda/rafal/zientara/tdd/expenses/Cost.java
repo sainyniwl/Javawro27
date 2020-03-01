@@ -32,9 +32,8 @@ public class Cost {
 
     @Override
     public String toString() {
-        return "shop = '" + shopName + '\'' +
-                ", date=" + date +
-                ", price=" + price +
-                '}';
+        return "Shop: " + shopName +
+                "   Date: " + date +
+                "   Price: " + price;
     }
 }

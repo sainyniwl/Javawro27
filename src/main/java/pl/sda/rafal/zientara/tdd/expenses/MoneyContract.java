@@ -7,6 +7,7 @@ public class MoneyContract {
 
     public interface View {
         void refreshList(List<Cost> data);
+        void refreshSum(double sum);
     }
 
     public interface Presenter {
@@ -19,5 +20,6 @@ public class MoneyContract {
         void onToDateChange(LocalDate toDate);
 
         List<Cost> getLastResult();
+        double getCostSum();
     }
 }
